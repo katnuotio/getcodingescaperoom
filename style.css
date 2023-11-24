@@ -5,6 +5,7 @@
     height: 100px;
     border: 3px solid black;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
     position: fixed;
     padding: 10px;
     margin: 10px;}
