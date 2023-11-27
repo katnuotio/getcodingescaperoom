@@ -4,7 +4,6 @@ body{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color:azure;
     box-sizing: border-box;
-    
 }
 
 .container {
@@ -14,8 +13,17 @@ body{
     background-position: center;
     box-sizing: border-box;
     background-size: cover;
-    padding-right: 5%;
-    padding-left: 3%;}
+    padding-right: 10%;
+    padding-left: 3%;
+padding-top: 10%;}
+
+.navbar{ widt: 90%;
+margin: auto;
+padding: 15px;
+justify-content: space-between;
+align-items: center;
+background-color: rgb(12, 12, 18);
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
       
 
