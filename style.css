@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: fantasy, cursive, sans-serif;
     color:azure;
     box-sizing: border-box;
 }
@@ -9,12 +9,12 @@ body{
 .container {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(woods.jpeg);
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(library.jpeg);
     background-position: center;
     box-sizing: border-box;
     background-size: cover;
     padding-right: 10%;
-    padding-left: 5%;
+    padding-left: 12%;
 padding-top: 17%;}
 
 .navbar{ widt: 90%;
@@ -24,7 +24,7 @@ justify-content: space-between;
 align-items: center;
 background-color: rgb(12, 12, 18);
 color: azure;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }    
       
 .button {
