@@ -1,10 +1,12 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: fantasy, cursive, sans-serif;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 21px;
     color:azure;
     box-sizing: border-box;
-}
+    overflow: hidden;}
+
 
 .container {
     height: 100vh;
@@ -17,31 +19,95 @@ body{
     padding-left: 12%;
 padding-top: 17%;}
 
+* {
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 20px;
+}
+
+::-webkit-scrollbar-track {
+	background: #ae9d72;
+	background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
+}
+
+::-webkit-scrollbar-thumb {
+	background: #ae9d72;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #8bba98;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	background: #697854;
+	margin: 0;
+	padding: 0;
+	font-family: "Josefin Slab", serif;
+}
+
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("https://picsum.photos/id/112/3840/2160");
+	background-size: cover;
+	background-position: center top;
+	z-index: -1;
+	filter: blur(10px);
+}
+
 .navbar{ width: 100%;
 margin: auto;
-padding: 15px;
+padding: 25px;
 justify-content: space-between;
 align-items: center;
 background-color: rgb(12, 12, 18);
 text-decoration:none; 
-color: azure;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
 
-.navbara {
-text-decoration:none; 
-color: azure;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}    
-      
-.button {
-    display: inline;
-    border-radius: 0.12em;
-    padding:0px;
-    padding-left: 50%;
-    background-color: #121212;
-    border: 6px solid #0e2a11ad;
-    color:#000;
-    text-decoration:none;
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 4px 9px;
+    text-decoration: none;
+    font-size: 15px;
   }
+
+  a.button2{
+    display:inline-block;
+    padding:0.7em 3em;
+    border:0.16em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:'Roboto',sans-serif;
+    font-weight:400;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.15s;
+    }
+    a.button2:hover{
+    color:#DDDDDD;
+ border-color:#DDDDDD;
+    }
+    a.button2:active{
+    color:#BBBBBB;
+    border-top-color:#BBBBBB;
+    @media all and (max-width:30em)
+    block;
+    margin:0.4em auto;}
+    
+
 
