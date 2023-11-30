@@ -1,7 +1,6 @@
 body{
     margin: 0;
     padding: 0;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 21px;
     color:azure;
     box-sizing: border-box;
@@ -13,7 +12,7 @@ body{
     width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(library.jpeg);
     background-position: center;
-    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-size: cover;
     padding-right: 10%;
     padding-left: 12%;
@@ -76,7 +75,8 @@ text-decoration:none;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
 
 .navbar a {
-    float: left;
+    float: right;
+    justify-content: center;
     color: #f2f2f2;
     text-align: center;
     padding: 4px 9px;
@@ -84,30 +84,38 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     font-size: 15px;
   }
 
+   
   a.button2{
     display:inline-block;
     padding:0.7em 3em;
     border:0.16em solid #FFFFFF;
     margin:0 0.3em 0.3em 0;
+    padding-right: 45%
     box-sizing: border-box;
     text-decoration:none;
     text-transform:uppercase;
+    text-align:center;
     font-family:'Roboto',sans-serif;
     font-weight:400;
     color:#FFFFFF;
     text-align:center;
-    transition: all 0.15s;
-    }
+    transition: all 0.15s}
+   
     a.button2:hover{
     color:#DDDDDD;
  border-color:#DDDDDD;
     }
+
     a.button2:active{
     color:#BBBBBB;
     border-top-color:#BBBBBB;
-    @media all and (max-width:30em)
-    block;
-    margin:0.4em auto;}
+    @media all and (max-width:30em)}
+
+    a.button2:{
+        margin-left: auto;
+        margin-right: auto;
+        width: 8em
+    } 
     
 
 
