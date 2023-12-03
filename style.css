@@ -12,7 +12,6 @@ body{
     width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(library.jpeg);
     background-position: center;
-    font-family:  'Helvetica Neue', sans-serif;
     background-size: cover;
     padding-right: 10%;
     padding-left: 12%;
@@ -46,13 +45,13 @@ body {
 	justify-content: center;
 	height: 100vh;
 	overflow: hidden;
-	background: #697854;
 	margin: 0;
 	padding: 0;
 	font-family: "Josefin Slab", serif;
 }
 
-h1 { color: #b48608; font-family: 'Droid serif', serif; font-size: 36px; font-weight: 400; font-style: italic; line-height: 44px; margin: 0 0 12px; text-align: center; }
+h1 { color: #aa4040; font-family: 'Droid serif', serif; font-size: 50px; font-weight: 400; font-style: italic; line-height: 44px; margin: 0 0 12px; text-align: center; }
+p { color: #fafcff; font-size: 20px; font-family: "Libre Baskerville", serif; line-height: 45px; text-align: center; padding-top: 20px; }
 
 .background {
 	position: fixed;
@@ -111,8 +110,8 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     transition: all 0.15s}
    
     a.button2:hover{
-    color:#DDDDDD;
- border-color:#DDDDDD;
+    color:#a32b2b;
+ border-color:#a32b2b;
     }
 
     a.button2:active{
