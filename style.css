@@ -52,6 +52,8 @@ body {
 	font-family: "Josefin Slab", serif;
 }
 
+h1 { color: #b48608; font-family: 'Droid serif', serif; font-size: 36px; font-weight: 400; font-style: italic; line-height: 44px; margin: 0 0 12px; text-align: center; }
+
 .background {
 	position: fixed;
 	top: 0;
@@ -83,6 +85,10 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
     text-decoration: none;
     font-size: 15px;
   }
+
+  .navbar a:hover {
+    background-color: #000000;
+    color: rgb(160, 20, 20);}
 
    
   a.button2{
