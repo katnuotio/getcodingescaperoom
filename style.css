@@ -4,7 +4,8 @@ body{
     font-size: 21px;
     color:azure;
     box-sizing: border-box;
-    overflow: hidden;}
+    overflow-x: hidden;
+overflow-y: auto;}
 
 
 .container {
