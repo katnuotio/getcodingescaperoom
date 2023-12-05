@@ -16,7 +16,11 @@ overflow-y: auto;}
     background-size: cover;
     padding-right: 10%;
     padding-left: 12%;
-padding-top: 10%;}
+padding-top: 10%;
+}
+
+.scrollbar{overflow-x: hidden;
+overflow-y:visible;}
 
 * {
 	box-sizing: border-box;
@@ -81,7 +85,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     justify-content: center;
     color: #f2f2f2;
     text-align: center;
-    padding: 4px 9px;
+    padding: 5px 9px;
     text-decoration: none;
     font-size: 19px;
   }
