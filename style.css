@@ -40,6 +40,8 @@ overflow-y:visible;}
 
 ::-webkit-scrollbar-thumb {
 	background: #000000;
+    border-radius: 10px;
+    scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar-thumb:hover {
