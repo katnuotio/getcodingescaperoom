@@ -19,6 +19,7 @@ overflow-y: auto;}
 padding-top: 10%;
 overflow-y: auto;
 overflow-x: hidden;
+scrollbar-color:black;
 }
 
 .scrollbar{overflow-x: hidden;
@@ -33,16 +34,16 @@ overflow-y:visible;}
 }
 
 ::-webkit-scrollbar-track {
-	background: #ae9d72;
+	background: #040300;
 	background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #ae9d72;
+	background: #000000;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #8bba98;
+	background: #262525;
 }
 
 body {
@@ -94,7 +95,8 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 
   .navbar a:hover {
     background-color: #000000;
-    color: rgb(160, 20, 20);}
+    color: rgb(160, 20, 20);
+    transform: rotate(-20deg);}
 
    
   a.button2{
@@ -119,6 +121,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     a.button2:hover{
     color:#a32b2b;
  border-color:#a32b2b;
+ transform: scale(1.1);
     }
 
     a.button2:active{
