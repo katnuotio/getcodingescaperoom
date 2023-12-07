@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-size: 21px;
-    color:azure;
+    color:rgb(255, 255, 255);
     box-sizing: border-box;
     overflow-x: hidden;
 overflow-y: auto;}
@@ -118,24 +118,11 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     font-weight:400;
     color:#FFFFFF;
     text-align:center;
-    transition: all 0.15s}
+    transition: all 0.15s;}
    
     a.button2:hover{
     color:#a32b2b;
  border-color:#a32b2b;
  transform: scale(1.1);
     }
-
-    a.button2:active{
-    color:#BBBBBB;
-    border-top-color:#BBBBBB;
-    @media all and (max-width:30em)}
-
-    a.button2:{
-        margin-left: auto;
-        margin-right: auto;
-        width: 8em
-    } 
-    
-
 
