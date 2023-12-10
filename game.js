@@ -1,18 +1,12 @@
-const quizContainer = document.getElementById('quiz-container');
-const questionContainer = document.getElementById('question-container');
-const submitButton = document.getElementById('submit-btn');
-const resultsContainer = document.getElementById('results-container');
+const questions =[
+{
+        question: "What is 2+2?",
+    answers: [
+        { text: "3", correct:false},
+        { text: "1", correct:false},
+        { text: "4", correct:true},
+        { text: "2", correct:false},
 
-// Quiz data
-const quizData = 
-    {
-        type: 'multiple-choice',
-        question: 'What is the capital of France?',
-        options: ['Berlin', 'Paris', 'Madrid', 'Rome'],
-        correctAnswer: 'Paris'
-    }
-
-    let steps = 0;
-    const maxSteps = 10;
-    function increaseSteps() {}
-
+    ]
+  }
+]
