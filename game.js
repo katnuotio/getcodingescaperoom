@@ -32,7 +32,7 @@ let score = 0;
 function startQuiz(){
     currentQuestionIndex = 0
     nextButton.innerHTML = "Next";
-    showquestion ();
+    showQuestion ();
 }
 
 function showQuestion () {
@@ -40,4 +40,7 @@ function showQuestion () {
     let questionNo = currentQuestionIndex +1;
     questionElement.innerHTML =questionNo + "." +currentQuestion.
     question;
-}
+
+currentQuestion.answers.forEach (answer => {
+    const button = documnet.createElement("button");
+    button.innerHTML = answer.text; 
