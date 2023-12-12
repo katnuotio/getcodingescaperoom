@@ -45,13 +45,13 @@ function showQuestion () {
 currentQuestion.answers.forEach (answer => {
     const button = document.createElement("button");
     button.innerHTML = answer.text;
-    button.classlist.add("btn");
+    button.classList.add("btn");
     answerButton.appendChild(button);
 });
 }
 
 function resetState(){
-         nextButton.style.display ="none";
+         nextButton.style.display ="inline";
          while(answerButton.firstChild){
             answerButton.removeChild(answerButton.firstChild);
 
