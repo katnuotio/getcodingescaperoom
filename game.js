@@ -36,11 +36,26 @@ function startQuiz(){
 }
 
 function showQuestion () {
+    resetState();
     let currentQuestion =questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex +1;
     questionElement.innerHTML =questionNo + "." +currentQuestion.
     question;
 
 currentQuestion.answers.forEach (answer => {
-    const button = documnet.createElement("button");
-    button.innerHTML = answer.text; 
+    const button = document.createElement("button");
+    button.innerHTML = answer.text;
+    button.classlist.add("btn");
+    answerButton.appendChild(button);
+});
+}
+
+function resetState(){
+         nextButton.style.display ="none";
+         while(answerButton.firstChild){
+            answerButton.removeChild(answerButton.firstChild);
+
+}
+}
+
+startQuiz();
