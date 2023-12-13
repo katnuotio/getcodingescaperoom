@@ -47,15 +47,29 @@ currentQuestion.answers.forEach (answer => {
     button.innerHTML = answer.text;
     button.classList.add("btn");
     answerButton.appendChild(button);
+    if(answer.correct){
+        button.dataset.correct. = answer.correct;
+    }
+    button.addEventListener ('click', selectAnswer);
 });
 }
 
 function resetState(){
-         nextButton.style.display ="inline";
+         nextButton.style.display ="none";
          while(answerButton.firstChild){
             answerButton.removeChild(answerButton.firstChild);
 
 }
 }
+
+function selectAnswer (){
+    const selectedBtn =e.target; 
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if(isCorrect){
+        selectedBtn.classlist.add("correct");
+    }else{
+        selectedBtn.classlist.add("incorrect");
+    }
+    }
 
 startQuiz();
