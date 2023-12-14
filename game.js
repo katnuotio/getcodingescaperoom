@@ -62,7 +62,7 @@ function resetState(){
 }
 }
 
-function selectAnswer (){
+function selectAnswer (e){
     const selectedBtn =e.target; 
     const isCorrect = selectedBtn.dataset.correct === "true";
     if(isCorrect){
