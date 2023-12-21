@@ -147,7 +147,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     .text-box {
         max-width: 500px;
         width: 90%;
-        background-color: #a32b2b;
+        background-color: #3b2424;
         border: 2px solid #333;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -203,7 +203,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     display:none}
 
     .correct{
-        background: #6376bc
+        background: #4d9163
     }
 
     .incorrect{

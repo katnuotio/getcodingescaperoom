@@ -66,9 +66,11 @@ function selectAnswer (e){
     const selectedBtn =e.target; 
     const isCorrect = selectedBtn.dataset.correct === "true";
     if(isCorrect){
-        selectedBtn.classlist.add("correct");
+        selectedBtn.classList.add("correct");
+        nextButton.style.display ="block";
+        nextButton.addEventListener("click", showQuestion);
     }else{
-        selectedBtn.classlist.add("incorrect");
+        selectedBtn.classList.add("incorrect");
     }
     }
 
