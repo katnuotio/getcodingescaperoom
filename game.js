@@ -18,6 +18,14 @@ const questions =[
       { text: "71", correct:false},
   ]
   }
+  {
+    question: "Is 2+2 4?",
+    answers: [
+        {text: "True", correct: true},
+        {text: "False", correct: false},
+    ],
+    isTrueFalse: true,
+}
 
 
 
