@@ -1,21 +1,21 @@
 const questions =[
 {
-        question: "What is 2+2?",
+        question: "In the enchanting library, amidst secrets so wide, a hidden message you found, a treasure to guide; a story, a tale, or something sweet, which word's the key? Let the adventure greet!   ",
     answers: [
-        { text: "3", correct:false},
-        { text: "1", correct:false},
-        { text: "4", correct:true},
-        { text: "2", correct:false},
+        { text: "lantern", correct:false},
+        { text: "staircase", correct:false},
+        { text: "tale", correct:true},
+        { text: "whisper", correct:false},
 
     ]
   },
   {
-  question: "Which is a primary color",
+  question: "Weaving through the castles charm, you see a number flight. Just through the passageway you see the numbers 8x9+7, leading you into a magical light.",
   answers: [
-      { text: "red", correct:true},
-      { text: "purple", correct:false},
-      { text: "green", correct:false},
-      { text: "white", correct:false},
+      { text: "79", correct:true},
+      { text: "80", correct:false},
+      { text: "92", correct:false},
+      { text: "71", correct:false},
   ]
   }
 
