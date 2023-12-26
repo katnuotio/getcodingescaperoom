@@ -69,11 +69,16 @@ function selectAnswer (e){
         selectedBtn.classList.add("correct");
         nextButton.style.display ="block";
         nextButton.addEventListener("click", () => {
-            currentQuestionIndex++;
+            currentQuestionIndex++; 
+
+            if(currentQuestionIndex < questions.length) {
+                showQuestion();
+            }
         })
 
     }else{
         selectedBtn.classList.add("incorrect");
+        showResult ();
     }
     }
 
