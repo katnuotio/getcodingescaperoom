@@ -68,7 +68,10 @@ function selectAnswer (e){
     if(isCorrect){
         selectedBtn.classList.add("correct");
         nextButton.style.display ="block";
-        nextButton.addEventListener("click", showQuestion);
+        nextButton.addEventListener("click", () => {
+            currentQuestionIndex++;
+        })
+
     }else{
         selectedBtn.classList.add("incorrect");
     }
