@@ -17,7 +17,7 @@ const questions =[
       { text: "92", correct:false},
       { text: "71", correct:false},
   ]
-  }
+  },
   {
     question: "Is 2+2 4?",
     answers: [
