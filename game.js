@@ -25,7 +25,14 @@ const questions =[
         {text: "False", correct: false},
     ],
     isTrueFalse: true,
-}
+},
+
+{
+    question: "Unscramble the letters",
+    scrambledWord: "MGICA",
+    correctAnswer: "MAGIC",
+    isTrueFalse: false,
+},
 
 
 
