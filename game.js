@@ -19,7 +19,7 @@ const questions =[
   ]
   },
   {
-    question: "Is 2+2 4?",
+    question: "In the enchanted library, fiction books lead to make-believe worlds, while non-fiction books guide the way to waking up from the dream. ",
     answers: [
         {text: "True", correct: true},
         {text: "False", correct: false},
@@ -66,7 +66,7 @@ function showQuestion () {
         trueButton.addEventListener ('click', selectAnswer);
         falseButton.addEventListener ('click,', selectAnswer);
 
-    } 
+    } else {
 
 currentQuestion.answers.forEach (answer => {
     const button = document.createElement("button");
@@ -78,7 +78,7 @@ currentQuestion.answers.forEach (answer => {
     }
     button.addEventListener ('click', selectAnswer);
 });
-}
+}}
 
 function resetState(){
          nextButton.style.display ="none";
