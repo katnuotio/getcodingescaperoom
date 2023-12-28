@@ -74,7 +74,9 @@ function showQuestion () {
         falseButton.addEventListener ('click,', selectAnswer);
 
     } else if (currentQuestion.scrambledWord) {
-        const
+        const scrambledLettersContainer = document.createElement("div");
+        scrambledLettersContainer.innerHTML = currentQuestion.scrambledWord;
+        
 
 currentQuestion.answers.forEach (answer => {
     const button = document.createElement("button");
