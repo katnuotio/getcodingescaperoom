@@ -50,6 +50,24 @@ function showQuestion () {
     questionElement.innerHTML =questionNo + "." +currentQuestion.
     question;
 
+    if(currentQuestion.isTrueFalse) {
+        const trueButton = document.createElement("button");
+        trueButton.innerHTML = "True";
+        trueButton.classList.add("btn");
+        answerButton.appendChild(trueButton);
+        trueButton.dataset.correct =true; 
+
+        const falseButton = document.createElement("button")
+        falseButton.innerHTML = "False";
+        falseButton.classList.add("btn");
+        answerButton.appendChild (falseButton);
+        falseButton.dataset.correct = false; 
+
+        trueButton.addEventListener ('click', selectAnswer);
+        falseButton.addEventListener ('click,', selectAnswer);
+
+    } 
+
 currentQuestion.answers.forEach (answer => {
     const button = document.createElement("button");
     button.innerHTML = answer.text;
