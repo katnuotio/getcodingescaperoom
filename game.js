@@ -84,7 +84,17 @@ function showQuestion () {
         inputField.type = "text";
         inputField.id = "answer-input";
         answerButton.appendChild(inputField);
-        
+
+        const submitButton = document.createElement("button");
+    submitButton.innerHTML = "What is the secret message?";
+    submitButton.classList.add("btn");
+    answerButton.appendChild(submitButton);
+
+    submitButton.addEventListener('click', () => {
+        const userAnswer = inputField.value.trim().toLowerCase();
+        checkScrambledAnswer(userAnswer);
+
+    });
 
 currentQuestion.answers.forEach (answer => {
     const button = document.createElement("button");
@@ -128,8 +138,9 @@ function selectAnswer(e) {
         selectedBtn.classList.add("incorrect");
     }
 
-    
-    nextButton.style.display = "block";
+    if(isCorrect) {
+   nextButton.style.display = "block";
+    }
 
   
     const answerButtons = document.querySelectorAll('.btn');
