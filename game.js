@@ -111,24 +111,51 @@ function resetState(){
 }
 }
 
-function selectAnswer (e){
-    const selectedBtn =e.target; 
+
+function selectAnswer(e) {
+    const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
-    if(isCorrect){
+
+    if (isCorrect) {
         selectedBtn.classList.add("correct");
-        nextButton.style.display ="block";
-        nextButton.addEventListener("click", () => {
-            currentQuestionIndex++; 
-
-            if(currentQuestionIndex < questions.length) {
-                showQuestion();
-            }
-        })
-
-    }else{
+    } else {
         selectedBtn.classList.add("incorrect");
-        showResult ();
     }
+
+    
+    nextButton.style.display = "block";
+
+  
+    const answerButtons = document.querySelectorAll('.btn');
+    answerButtons.forEach(button => {
+        button.removeEventListener('click', selectAnswer);
+    });
+
+    
+    nextButton.addEventListener('click', nextQuestion);
+}
+
+function nextQuestion() {
+   
+    currentQuestionIndex++;
+
+   
+    if (currentQuestionIndex < questions.length) {
+      
+        showQuestion();
+    } else {
+        
+        showResult();
     }
+
+    // Remove the event listener from the "Next" button
+    nextButton.removeEventListener('click', nextQuestion);
+}
+
+// ... (rest of the code)
+
+
+
+  
 
 startQuiz();
