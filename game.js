@@ -94,7 +94,7 @@ function showQuestion () {
         const userAnswer = inputField.value.trim().toLowerCase();
         checkScrambledAnswer(userAnswer);
 
-    });
+    })
 
 currentQuestion.answers.forEach (answer => {
     const button = document.createElement("button");
@@ -127,34 +127,37 @@ function resetState(){
 }
 }
 
-
 function selectAnswer(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
 
     if (isCorrect) {
         selectedBtn.classList.add("correct");
+        // Display the next button only if the answer is correct
+        nextButton.style.display = "block";
     } else {
         selectedBtn.classList.add("incorrect");
+        // Allow the user to continue making selections even if the answer is incorrect
     }
 
-    if(isCorrect) {
-   nextButton.style.display = "block";
-    }
-
-  
     const answerButtons = document.querySelectorAll('.btn');
     answerButtons.forEach(button => {
         button.removeEventListener('click', selectAnswer);
+        button.addEventListener('click', selectAnswer);
     });
 
-    
+
     nextButton.addEventListener('click', nextQuestion);
 }
+
+
+
 
 function nextQuestion() {
    
     currentQuestionIndex++;
+
+    resetState();
 
    
     if (currentQuestionIndex < questions.length) {
@@ -165,8 +168,8 @@ function nextQuestion() {
         showResult();
     }
 
-    // Remove the event listener from the "Next" button
-    nextButton.removeEventListener('click', nextQuestion);
+    
+    nextButton.addEventListener('click', nextQuestion);
 }
 
 
