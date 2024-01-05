@@ -78,7 +78,13 @@ function showQuestion () {
         scrambledLettersContainer.innerHTML = currentQuestion.scrambledWord;
         scrambledLettersContainer.id ="scrambled-letters-container";
         scrambledLettersContainer.classList.add("btn");
-        answerButton.appendChild(button);
+        answerButton.appendChild(scrambledLettersContainer);
+
+        const inputField = document.createElement("input");
+        inputField.type = "text";
+        inputField.id = "answer-input";
+        answerButton.appendChild(inputField);
+        
 
 currentQuestion.answers.forEach (answer => {
     const button = document.createElement("button");
@@ -152,7 +158,6 @@ function nextQuestion() {
     nextButton.removeEventListener('click', nextQuestion);
 }
 
-// ... (rest of the code)
 
 
 
