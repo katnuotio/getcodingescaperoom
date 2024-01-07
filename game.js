@@ -96,6 +96,7 @@ function showQuestion () {
         checkScrambledAnswer(userAnswer);
 
     })
+    
 
 currentQuestion.answers.forEach (answer => {
     const button = document.createElement("button");
