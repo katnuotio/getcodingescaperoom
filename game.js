@@ -96,7 +96,20 @@ function showQuestion () {
         checkScrambledAnswer(userAnswer);
 
     })
-    
+
+    function checkScrambledAnswer(userAnswer){
+        const currentQuestion = questions[currentQuestionIndex];
+        if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+            
+            nextButton.style.display ="block";
+        
+        } else {
+
+        alert ("Try Again!");
+        }
+        
+    }
+
 
 currentQuestion.answers.forEach (answer => {
     const button = document.createElement("button");
