@@ -87,7 +87,7 @@ function showQuestion () {
         answerButton.appendChild(inputField);
 
         const submitButton = document.createElement("button");
-    submitButton.innerHTML = "What is the secret message?";
+    submitButton.innerHTML = "I know the secret word!";
     submitButton.classList.add("btn");
     answerButton.appendChild(submitButton);
 

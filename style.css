@@ -210,11 +210,12 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
         background-color: #a32b2b;
     }
 
-    .scrambledContainer{
+    .scrambled-container{
         background-color: #a32b2b;
+        color: #f2f2f2;
     }
 
-    .scrambledContainer:hover {background:#a32b2b;}
+   
 
     
 
