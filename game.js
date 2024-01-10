@@ -19,7 +19,7 @@ const questions =[
   ]
   },
   {
-    question: "In the enchanted library, fiction books lead to make-believe worlds, while non-fiction books guide the way to waking up from the dream. ",
+    question: "In the enchanted library, fiction books lead to make-believe worlds, while non-fiction books guide the path to the real way to escape. ",
     answers: [
         {text: "True", correct: true},
         {text: "False", correct: false},
