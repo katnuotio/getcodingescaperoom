@@ -206,7 +206,12 @@ if (currentQuestion.isTrueFalse){
 
 } else if (currentQuestion.scrambledLettersContainer){
 
-} else {}
+} else {
+
+    const cluesContainer =document.createElement("div");
+    cluesContainer.id = "clues-container";
+    
+
 
 
 
