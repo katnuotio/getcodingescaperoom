@@ -210,7 +210,10 @@ if (currentQuestion.isTrueFalse){
 
     const cluesContainer =document.createElement("div");
     cluesContainer.id = "clues-container";
-    
+    cluesContainer.classList.add("clues-container");
+    answerButton.appendChild(cluesContainer);
+ 
+
 
 
 
