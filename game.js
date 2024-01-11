@@ -202,6 +202,13 @@ function showQuestion() {
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
+if (currentQuestion.isTrueFalse){
+
+} else if (currentQuestion.scrambledLettersContainer){
+
+} else {}
+
+
 
 
 
