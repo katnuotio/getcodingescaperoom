@@ -196,7 +196,7 @@ function nextQuestion() {
     nextButton.addEventListener('click', nextQuestion);
 }
 
-function showQuestion() {
+function showQuestion() 
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
@@ -212,6 +212,24 @@ if (currentQuestion.isTrueFalse){
     cluesContainer.id = "clues-container";
     cluesContainer.classList.add("clues-container");
     answerButton.appendChild(cluesContainer);
+
+    const cluesButton = document.createElement("button");
+    cluesButton.innerHTML = "Show Clues";
+    cluesButton.classList.add("btn");
+    cluesContainer.appendChild(cluesButton);
+
+    const cluesList = document.createElement("url");
+    cluesList.classList.add("clues-list");
+
+    cluesButton.addEventListener("click, () => {
+        currentQuestion.clues.forEach ((clue) => {
+            const clueItem = document.createElement("li");
+        });
+        cluesButton.disabled = true;
+
+    });
+  }
+}
  
 
 
