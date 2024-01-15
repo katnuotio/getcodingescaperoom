@@ -218,19 +218,20 @@ if (currentQuestion.isTrueFalse){
     cluesButton.classList.add("btn");
     cluesContainer.appendChild(cluesButton);
 
-    const cluesList = document.createElement("url");
+    const cluesList = document.createElement("ul");
     cluesList.classList.add("clues-list");
 
-    cluesButton.addEventListener("click, () => {
+    cluesButton.addEventListener("click", () => {
         currentQuestion.clues.forEach ((clue) => {
             const clueItem = document.createElement("li");
+            clueItem.innerHTML = clue;
+            cluesList.appendChild(clueItem);   
         });
         cluesButton.disabled = true;
-
     });
-  }
 }
- 
+
+
 
 
 
