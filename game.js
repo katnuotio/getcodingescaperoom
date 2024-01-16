@@ -43,7 +43,7 @@ answers: [
 
 },
 {
-    question: "You find yourself in the history section, on the wall you are drawn to a book. The History of Newfoundland and Labrador. Another step closer! Find the answer with these three clues!"
+    question: "You find yourself in the history section, on the wall you are drawn to a book. The History of Newfoundland and Labrador. Another step closer! Find the answer with these three clues!",
     clues: ["My name starts with A.", "I am the second largest in the world.", "Sailors and fisherman navigate me to reach distant shores."],
     correctAnswer: "Atlantic Ocean",
 },
@@ -85,7 +85,7 @@ function showQuestion () {
         falseButton.dataset.correct = false; 
 
         trueButton.addEventListener ('click', selectAnswer);
-        falseButton.addEventListener ('click,', selectAnswer);
+        falseButton.addEventListener ('click', selectAnswer);
 
     } else if (currentQuestion.scrambledWord) {
         const scrambledLettersContainer = document.createElement("div");
@@ -201,7 +201,7 @@ function nextQuestion() {
     nextButton.addEventListener('click', nextQuestion);
 }
 
-function showQuestion() 
+function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
