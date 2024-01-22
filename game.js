@@ -47,7 +47,14 @@ answers: [
     clues: ["My name starts with A.", "I am the second largest in the world.", "Sailors and fisherman navigate me to reach distant shores."],
     correctAnswer: "Atlantic Ocean",
 },
-
+{
+    question: "In the ancient library of enchantments, there are 789 enchanted crystals on one shelf and 423 mystical scrolls on another. The total number of magical items on both shelves is 1,512. Is this statement true or false?",
+    answers: [
+        {text: "True", correct: true},
+        {text: "False", correct: false},
+    ],
+    isTrueFalse: false,
+},
 
 
 ];
@@ -268,32 +275,29 @@ function showQuestion() {
             button.addEventListener('click', selectAnswer);
         });
     }
-
-    
     if (currentQuestion.clues) {
         const cluesContainer = document.createElement("div");
-        console.log
         cluesContainer.id = "clues-container";
         cluesContainer.classList.add("clues-container");
         answerButton.appendChild(cluesContainer);
-
+    
         const inputField = document.createElement("input");
         inputField.type = "text";
         inputField.id = "clue-input";
         inputField.placeholder = "Type your answer";
         cluesContainer.appendChild(inputField);
-
+    
         const cluesButton = document.createElement("button");
         cluesButton.innerHTML = "Show Clues";
         cluesButton.classList.add("btn");
         cluesContainer.appendChild(cluesButton);
-
+    
         const cluesList = document.createElement("ul");
         cluesList.classList.add("clues-list");
         cluesContainer.appendChild(cluesList);
-
-        
+    
         cluesButton.addEventListener("click", () => {
+            console.log
             currentQuestion.clues.forEach(clue => {
                 const clueItem = document.createElement("li");
                 clueItem.innerHTML = clue;
@@ -301,21 +305,10 @@ function showQuestion() {
             });
             cluesButton.disabled = true;
         });
-        cluesButton.removeEventListener("click", showClues);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-  
+    
+    
+    
 
 startQuiz();
