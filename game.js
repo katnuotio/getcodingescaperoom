@@ -276,6 +276,12 @@ function showQuestion() {
         cluesContainer.classList.add("clues-container");
         answerButton.appendChild(cluesContainer);
 
+        const inputField = document.createElement("input");
+        inputField.type = "text";
+        inputField.id = "clue-input";
+        inputField.placeholder = "Type your answer";
+        cluesContainer.appendChild(inputField);
+
         const cluesButton = document.createElement("button");
         cluesButton.innerHTML = "Show Clues";
         cluesButton.classList.add("btn");
@@ -285,6 +291,7 @@ function showQuestion() {
         cluesList.classList.add("clues-list");
         cluesContainer.appendChild(cluesList);
 
+        
         cluesButton.addEventListener("click", () => {
             currentQuestion.clues.forEach(clue => {
                 const clueItem = document.createElement("li");
@@ -293,6 +300,7 @@ function showQuestion() {
             });
             cluesButton.disabled = true;
         });
+        cluesButton.removeEventListener("click", showClues);
     }
 }
 
