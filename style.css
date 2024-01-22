@@ -7,6 +7,13 @@ body{
     overflow-x: hidden;
 overflow-y: auto;}
 
+[class*="col-"] {
+    width: 100%;}
+
+    @media only screen and (min-width: 601px) {
+        div.example {
+          font-size: 80px;}
+        }
 
 .container {
     height: 100vh;
@@ -14,9 +21,10 @@ overflow-y: auto;}
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(library.jpeg);
     background-position: center;
     background-size: cover;
-    padding-right: 10%;
+    padding-right: 15%;
     padding-left: 12%;
-    padding-top: 10%;
+    padding-top: 0%;
+    padding-bottom:0%;
    overflow-y: auto;  
    overflow-x: hidden;
   scrollbar-color:black;
