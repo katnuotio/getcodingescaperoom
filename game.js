@@ -272,6 +272,7 @@ function showQuestion() {
     
     if (currentQuestion.clues) {
         const cluesContainer = document.createElement("div");
+        console.log
         cluesContainer.id = "clues-container";
         cluesContainer.classList.add("clues-container");
         answerButton.appendChild(cluesContainer);
