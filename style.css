@@ -76,7 +76,8 @@ h1 { color: #a32b2b;
      font-style: italic;
       line-height: 44px; 
       margin: 0 0 12px;
-      margin-bottom: 2%; 
+      margin-bottom: 5%; 
+      margin-top: 5%;
       text-align: center; }
 
 p { color: #fafcff; 
@@ -200,7 +201,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     }
 
     .btn:hover{
-        background:#222;
+        
         color:#FFFFFF;
     }
 
