@@ -76,7 +76,7 @@ h1 { color: #a32b2b;
      font-style: italic;
       line-height: 44px; 
       margin: 0 0 12px;
-      margin-bottom: 7%; 
+      margin-bottom: 2%; 
       text-align: center; }
 
 p { color: #fafcff; 
@@ -101,7 +101,7 @@ p { color: #fafcff;
 
 .navbar{ width: 100%;
 margin: auto;
-padding: 25px;
+padding: 10px;
 justify-content: space-between;
 align-items: center;
 background-color: rgb(12, 12, 18);
@@ -159,14 +159,14 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
       }
 
     .text-box {
-        max-width: 600px;
+        max-width: 550px;
         width: 80%;
         background-color: #3b2424;
         border: 2px solid #333;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 80px;
-        max-height: 140%;
+        padding: 50px;
+        max-height: 120%;
        display:inline-block;
     }
     
