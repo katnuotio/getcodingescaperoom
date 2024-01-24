@@ -198,7 +198,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
       border-radius: 4px;
       cursor: pointer;
       transition: all 0.3s;
-     background-color: #2c3e50;  
+     background-color: #5f6164;  
     transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
     }
 
@@ -207,6 +207,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
         color:#040000;
         transform: scale(1.1);
         background-color: #cbcbcbd5;
+        box-shadow: 0 0 10px rgba(139, 69, 19, 0.8);
     }
 
     #next-btn{
