@@ -105,7 +105,7 @@ currentQuestion.answers.forEach (answer => {
     }
     button.addEventListener ('click', selectAnswer);
 });
-}else { 
+{ else { 
     currentQuestion.answers.forEach(answer => {
         const button =document.createElement ("button");
         button.innerHTML =answer.text;
