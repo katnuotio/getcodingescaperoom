@@ -270,6 +270,7 @@ function showQuestion() {
             const currentQuestion = questions[currentQuestionIndex];
             if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
                 nextButton.style.display = "block";
+                messageContainer.innerHTML = "";
             } else {
                 messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
             }
@@ -283,6 +284,7 @@ function showQuestion() {
             answerButton.appendChild(button);
             if (answer.correct) {
                 button.dataset.correct = answer.correct;
+                
             }
             button.addEventListener('click', selectAnswer);
         });
