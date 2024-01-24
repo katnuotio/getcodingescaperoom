@@ -105,18 +105,8 @@ currentQuestion.answers.forEach (answer => {
     }
     button.addEventListener ('click', selectAnswer);
 });
-{ else { 
-    currentQuestion.answers.forEach(answer => {
-        const button =document.createElement ("button");
-        button.innerHTML =answer.text;
-        button.classList.add("btn");
-        answerButton.appendChild(button);
-        if (answer.correct) {
-            button.dataset.correct= answer.correct;
-        }
-        button.addEventListener ('click', selectAnswer);
-});
-    }
+
+
 
 function resetState(){
          nextButton.style.display ="none";
@@ -272,6 +262,7 @@ function showQuestion() {
             button.addEventListener('click', selectAnswer);
         });
     }
+}
 
 
     
