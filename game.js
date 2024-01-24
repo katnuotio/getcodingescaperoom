@@ -83,87 +83,6 @@ function startQuiz(){
 }
 
 
-    resetState();
-    let currentQuestion =questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex +1;
-    questionElement.innerHTML =questionNo + "." +currentQuestion.
-    question;
-
-    if(currentQuestion.isTrueFalse) {
-        const trueButton = document.createElement("button");
-        trueButton.innerHTML = "True";
-        trueButton.classList.add("btn");
-        answerButton.appendChild(trueButton);
-        trueButton.dataset.correct =true; 
-
-        const falseButton = document.createElement("button")
-        falseButton.innerHTML = "False";
-        falseButton.classList.add("btn");
-        answerButton.appendChild (falseButton);
-        falseButton.dataset.correct = false; 
-
-        trueButton.addEventListener ('click', selectAnswer);
-        falseButton.addEventListener ('click', selectAnswer);
-
-    } else if (currentQuestion.scrambledWord) {
-        const scrambledLettersContainer = document.createElement("div");
-        scrambledLettersContainer.innerHTML = currentQuestion.scrambledWord;
-        scrambledLettersContainer.id ="scrambled-letters-container";
-        scrambledLettersContainer.classList.add("scrambled-container");
-        answerButton.appendChild(scrambledLettersContainer);
-
-        const inputField = document.createElement("input");
-        inputField.type = "text";
-        inputField.id = "answer-input";
-        answerButton.appendChild(inputField);
-
-        const submitButton = document.createElement("button");
-    submitButton.innerHTML = "I know the secret word!";
-    submitButton.classList.add("btn");
-    answerButton.appendChild(submitButton);
-
-    submitButton.addEventListener('click', () => {
-        const userAnswer = inputField.value.trim().toLowerCase();
-        checkScrambledAnswer(userAnswer);
-
-    })
-
-    function checkScrambledAnswer(userAnswer){
-        const currentQuestion = questions[currentQuestionIndex];
-        if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
-            
-            nextButton.style.display ="block";
-        
-        } else {
-
-        alert ("Try Again!");
-        }
-        
-    }
-
-
-currentQuestion.answers.forEach (answer => {
-    const button = document.createElement("button");
-    button.innerHTML = answer.text;
-    button.classList.add("btn");
-    answerButton.appendChild(button);
-    if(answer.correct){
-        button.dataset.correct = answer.correct;
-    }
-    button.addEventListener ('click', selectAnswer);
-});
-}else { 
-    currentQuestion.answers.forEach(answer => {
-        const button =document.createElement ("button");
-        button.innerHTML =answer.text;
-        button.classList.add("btn");
-        answerButton.appendChild(button);
-        if (answer.correct) {
-            button.dataset.correct= answer.correct;
-        }
-        button.addEventListener ('click', selectAnswer);
-});
-    }
 
 function resetState(){
          nextButton.style.display ="none";
@@ -274,7 +193,7 @@ function showQuestion() {
                 messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
             }
         }
-    }else if (currentQuestion.clues) 
+    }else if (currentQuestion.clues) {
         const cluesContainer = document.createElement("div");
         cluesContainer.id = "clues-container";
         cluesContainer.classList.add("clues-container");
@@ -319,6 +238,7 @@ function showQuestion() {
             button.addEventListener('click', selectAnswer);
         });
     }
+}
     
       
     
