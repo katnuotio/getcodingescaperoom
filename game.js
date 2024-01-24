@@ -169,11 +169,9 @@ function selectAnswer(e) {
 
     if (isCorrect) {
         selectedBtn.classList.add("correct");
-        // Display the next button only if the answer is correct
         nextButton.style.display = "block";
     } else {
         selectedBtn.classList.add("incorrect");
-        // Allow the user to continue making selections even if the answer is incorrect
     }
 
     const answerButtons = document.querySelectorAll('.btn');
