@@ -82,7 +82,7 @@ function startQuiz(){
     showQuestion ();
 }
 
-function showQuestion () {
+
     resetState();
     let currentQuestion =questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex +1;
@@ -110,7 +110,6 @@ function showQuestion () {
         scrambledLettersContainer.innerHTML = currentQuestion.scrambledWord;
         scrambledLettersContainer.id ="scrambled-letters-container";
         scrambledLettersContainer.classList.add("scrambled-container");
-        scrambledLettersContainer.classList.add("btn");
         answerButton.appendChild(scrambledLettersContainer);
 
         const inputField = document.createElement("input");
@@ -165,7 +164,7 @@ currentQuestion.answers.forEach (answer => {
         button.addEventListener ('click', selectAnswer);
 });
     }
-}
+
 function resetState(){
          nextButton.style.display ="none";
          while(answerButton.firstChild){
@@ -275,7 +274,41 @@ function showQuestion() {
                 messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
             }
         }
+    }else if{ (currentQuestion.clues) 
+        const cluesContainer = document.createElement("div");
+        cluesContainer.id = "clues-container";
+        cluesContainer.classList.add("clues-container");
+        answerButton.appendChild(cluesContainer);
+    
+        const inputField = document.createElement("input");
+        inputField.type = "text";
+        inputField.id = "clue-input";
+        inputField.placeholder = "Type your answer";
+        cluesContainer.appendChild(inputField);
+    
+        const cluesButton = document.createElement("button");
+        cluesButton.innerHTML = "Show Clues";
+        cluesButton.classList.add("btn");
+        cluesContainer.appendChild(cluesButton);
+    
+        const cluesList = document.createElement("ul");
+        cluesList.classList.add("clues-list");
+        cluesContainer.appendChild(cluesList);
+    
+        cluesButton.addEventListener("click", () => {
+            console.log
+            currentQuestion.clues.forEach(clue => {
+                const clueItem = document.createElement("li");
+                clueItem.innerHTML = clue;
+                cluesList.appendChild(clueItem);
+            });
+            cluesButton.disabled = true;
+        });
+    
+
     } else {
+
+        
       
         currentQuestion.answers.forEach(answer => {
             const button = document.createElement("button");
