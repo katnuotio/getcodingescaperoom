@@ -248,6 +248,9 @@ function showQuestion() {
         scrambledLettersContainer.classList.add("btn");
         answerButton.appendChild(scrambledLettersContainer);
 
+        const messageContainer = document.getElementById("message-container");
+
+
         const inputField = document.createElement("input");
         inputField.type = "text";
         inputField.id = "answer-input";
@@ -268,7 +271,7 @@ function showQuestion() {
             if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
                 nextButton.style.display = "block";
             } else {
-                alert("Try Again!");
+                messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
             }
         }
     } else {
