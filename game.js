@@ -163,7 +163,6 @@ function showQuestion() {
         scrambledLettersContainer.innerHTML = currentQuestion.scrambledWord;
         scrambledLettersContainer.id = "scrambled-letters-container";
         scrambledLettersContainer.classList.add("scrambled-container");
-        scrambledLettersContainer.classList.add("btn");
         answerButton.appendChild(scrambledLettersContainer);
 
         const messageContainer = document.getElementById("message-container");

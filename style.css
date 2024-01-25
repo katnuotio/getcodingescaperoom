@@ -232,9 +232,20 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 
     .scrambled-container{
         background-color: #a32b2b;
-        color: #f2f2f2;
+        color: #fff6f6;
+        font: weight 500px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      width:100%;
+      border: 1px solid #222;
+      padding: 10px;
+      margin: 10px 0; 
     }
 
+    .clues-list{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        list-style-type: none;
+
+    }
     
 
    
