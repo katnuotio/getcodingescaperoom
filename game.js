@@ -136,6 +136,7 @@ function nextQuestion() {
 }
 
 function showQuestion() {
+    console.log("Entering showQuestion function");
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
@@ -217,12 +218,12 @@ function showQuestion() {
             cluesContainer.classList.add("show");
 
 
-            currentQuestion.clues.forEach(clue, index => {
+            currentQuestion.clues.forEach((clue, index) => {
                 setTimeout(() => {
                 const clueItem = document.createElement("li");
                 clueItem.innerHTML = clue;
                 cluesList.appendChild(clueItem);
-                }, (index + 1) *500);
+                }, (index + 1) *1000);
                 
             });
             cluesButton.disabled = true;

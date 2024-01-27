@@ -252,10 +252,11 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
         opacity: 1;
     }
     
-
-   
-
+.clues-list{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:#f2f2f2;
     
+}
 
 
     
