@@ -215,8 +215,7 @@ function showQuestion() {
         cluesContainer.appendChild(cluesList);
     
         cluesButton.addEventListener("click", () => {
-            cluesContainer.style.display = "block";
-            cluesContainer.style.opacity = 1;
+             console.log("Clues button clicked!");
             cluesContainer.classList.add("show");
 
 
