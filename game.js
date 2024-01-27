@@ -214,11 +214,16 @@ function showQuestion() {
         cluesContainer.appendChild(cluesList);
     
         cluesButton.addEventListener("click", () => {
-            console.log
-            currentQuestion.clues.forEach(clue => {
+            cluesContainer.classList.add("show");
+
+
+            currentQuestion.clues.forEach(clue, index => {
+                setTimeout(() => {
                 const clueItem = document.createElement("li");
                 clueItem.innerHTML = clue;
                 cluesList.appendChild(clueItem);
+                }, (index + 1) *500);
+                
             });
             cluesButton.disabled = true;
         });
