@@ -244,7 +244,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     #clues-container {
         display: inline-block;
         opacity: 8;
-        transition: opacity 0.5s ease-in-out;
+        transition: opacity 5.0s ease-in-out;
     }
     
     .clues-container.show {
@@ -253,8 +253,11 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     }
     
 .clues-list{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color:#f2f2f2;
+    font-size: large;
+    list-style: none;
+    
 
 }
 
