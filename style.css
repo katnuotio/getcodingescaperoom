@@ -257,6 +257,11 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     color:#f2f2f2;
     font-size: large;
     list-style: none;
+    display:inline;
+
+    .clues-Button{
+        display: inline;
+    }
     
 
 }
