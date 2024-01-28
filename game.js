@@ -229,6 +229,27 @@ function showQuestion() {
             });
             cluesButton.disabled = true;
         });
+
+
+        submitButton.addEventListener("click", () => { 
+            const userAnswer = inputField.value.trim().toLowerCase();
+            checkClueAnswer(userAnswer);
+        });
+
+        function checkClueAnswer(userAnswer){
+            const currentQuestion=questions[currentQuestionIndex];
+            if(userAnswer === currentQuestion.correctAnswer.toLowerCase()){
+
+                console.log("correct")
+            }else{
+                console.log('incorrect')
+
+            }
+        }
+
+        answerButton.appendChild(inputField);
+        answerButton.appendChild(cluesButton);
+        answerButton.appendChild(submitButton);
     
 
     } else {
@@ -242,6 +263,7 @@ function showQuestion() {
                 
             }
             button.addEventListener('click', selectAnswer);
+            
         });
     }
 }
