@@ -198,55 +198,54 @@ function showQuestion() {
         cluesContainer.id = "clues-container";
         cluesContainer.classList.add("clues-container");
         answerButton.appendChild(cluesContainer);
-    
+
         const inputField = document.createElement("input");
         inputField.type = "text";
         inputField.id = "clue-input";
         inputField.placeholder = "Type your answer";
-        cluesContainer.appendChild(inputField);
-    
+        answerButton.appendChild(inputField);
+
         const cluesButton = document.createElement("button");
         cluesButton.innerHTML = "Show Clues";
         cluesButton.classList.add("btn");
         cluesContainer.appendChild(cluesButton);
-    
+
         const cluesList = document.createElement("ul");
         cluesList.classList.add("clues-list");
         cluesContainer.appendChild(cluesList);
-    
-        cluesButton.addEventListener("click", () => {
-             console.log("Clues button clicked!");
-            cluesContainer.classList.add("show");
 
+        cluesButton.addEventListener("click", () => {
+            cluesContainer.classList.add("show");
 
             currentQuestion.clues.forEach((clue, index) => {
                 setTimeout(() => {
-                const clueItem = document.createElement("li");
-                clueItem.innerHTML = clue;
-                cluesList.appendChild(clueItem);
-                }, (index + 1) *1000);
-                
+                    const clueItem = document.createElement("li");
+                    clueItem.innerHTML = clue;
+                    cluesList.appendChild(clueItem);
+                }, (index + 1) * 1000);
             });
             cluesButton.disabled = true;
         });
 
+        const submitButton = document.createElement("button");
+        submitButton.innerHTML = "Submit Answer";
+        submitButton.classList.add("btn");
+        answerButton.appendChild(submitButton);
 
-        submitButton.addEventListener("click", () => { 
+        submitButton.addEventListener("click", () => {
             const userAnswer = inputField.value.trim().toLowerCase();
             checkClueAnswer(userAnswer);
         });
 
-        function checkClueAnswer(userAnswer){
-            const currentQuestion=questions[currentQuestionIndex];
-            if(userAnswer === currentQuestion.correctAnswer.toLowerCase()){
-
-                console.log("correct")
-            }else{
-                console.log('incorrect')
-
+        function checkClueAnswer(userAnswer) {
+            const currentQuestion = questions[currentQuestionIndex];
+            if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+                nextButton.style.display = "block";
+                messageContainer.innerHTML = "";
+            } else {
+                messageContainer.innerHTML = "<p style='color: red;'>Incorrect!"    
             }
         }
-
         answerButton.appendChild(inputField);
         answerButton.appendChild(cluesButton);
         answerButton.appendChild(submitButton);
