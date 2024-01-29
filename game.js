@@ -66,7 +66,15 @@ answers: [
     ],
     isTrueFalse: false,
 },
-
+{
+    question: " Next question test.",
+    answers: [
+        { text: "79", correct:true},
+        { text: "80", correct:false},
+        { text: "92", correct:false},
+        { text: "71", correct:false},
+    ]
+    },
 
 ];
 const questionElement = document.getElementById("question");
