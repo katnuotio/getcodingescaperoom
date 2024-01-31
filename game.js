@@ -247,13 +247,16 @@ function showQuestion() {
 
         function checkClueAnswer(userAnswer) {
             const currentQuestion = questions[currentQuestionIndex];
+            const messageContainer = document.getElementById("message-container");
+        
             if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
                 nextButton.style.display = "block";
                 messageContainer.innerHTML = "";
             } else {
-                messageContainer.innerHTML = "<p style='color: red;'>Incorrect!"    
+                messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
             }
         }
+        
         answerButton.appendChild(inputField);
         answerButton.appendChild(cluesButton);
         answerButton.appendChild(submitButton);
