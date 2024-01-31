@@ -85,7 +85,9 @@ let currentQuestionIndex= 0;
 let score = 0; 
 
 function startQuiz(){
-    currentQuestionIndex = 0
+    currentQuestionIndex = parseInt(localStorage.getItem("currentQuestionIndex")) || 0;
+    score= parseInt(localStorage.getItem("score")) || 0;
+    
     nextButton.innerHTML = "Next";
     showQuestion ();
 }
