@@ -67,14 +67,13 @@ answers: [
     isTrueFalse: false,
 },
 {
-    question: " Next question test.",
-    answers: [
-        { text: "79", correct:true},
-        { text: "80", correct:false},
-        { text: "92", correct:false},
-        { text: "71", correct:false},
-    ]
+    question: "Unscramble the letters",
+    scrambledWord: "STIHYRO",
+    correctAnswer: "HISTORY",
+    isTrueFalse: false,
     },
+
+    
 
 ];
 const questionElement = document.getElementById("question");
@@ -218,7 +217,7 @@ function showQuestion() {
         const cluesButton = document.createElement("button");
         cluesButton.innerHTML = "Show Clues";
         cluesButton.classList.add("btn");
-        cluesContainer.appendChild(cluesButton);
+    
 
         const cluesList = document.createElement("ul");
         cluesList.classList.add("clues-list");
@@ -262,6 +261,7 @@ function showQuestion() {
         answerButton.appendChild(inputField);
         answerButton.appendChild(cluesButton);
         answerButton.appendChild(submitButton);
+        answerButton.appendChild(cluesContainer);
     
 
     } else {
