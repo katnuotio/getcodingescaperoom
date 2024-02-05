@@ -143,7 +143,7 @@ function nextQuestion() {
     nextButton.addEventListener('click', nextQuestion);
 }
 function showCongratulations() {
-    questionElement.innerHTML = "Congratulations! You've escaped the library!";
+    questionElement.innerHTML = "Amazing work, little adventurer! You conquered the mysterious puzzles in the library and uncovered your teacher behind a magical bookshelf. She's super grateful for your cleverness! She shares a special secret with you – a magical map that unveils the library's incredible wonders. Together, you're on a mission to share these secrets with the world and bring enchantment to everyone. Get ready for more fantastic adventures as you spread the magic of the library far and wide!";
     answerButton.innerHTML = ''; 
     nextButton.style.display = 'none'; 
     localStorage.clear(); 
