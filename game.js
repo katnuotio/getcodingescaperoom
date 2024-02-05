@@ -73,7 +73,12 @@ answers: [
     isTrueFalse: false,
     },
 
-    
+   { question: "In the eerie corridors of the haunted library, a mysterious shape lurks among the dusty tomes. Can you unveil its identity with these spine-chilling clues?",
+    clues: ["This mysterious shape has 4 sides, quietly holding ancient secrets.", "It casts shadows of right angles, reminiscent of the creaking bookshelves.", "The ghostly whispers reveal that opposite sides of this shape share the same spectral length."],
+    correctAnswer: "Rectangle",
+},
+
+
 
 ];
 const questionElement = document.getElementById("question");
@@ -126,23 +131,24 @@ function selectAnswer(e) {
 
 
 function nextQuestion() {
-   
     currentQuestionIndex++;
-
     resetState();
 
-   
     if (currentQuestionIndex < questions.length) {
-      
         showQuestion();
     } else {
-        
-        showResult();
+        showCongratulations();
     }
 
-    
     nextButton.addEventListener('click', nextQuestion);
 }
+function showCongratulations() {
+    questionElement.innerHTML = "Congratulations! You've escaped the library!";
+    answerButton.innerHTML = ''; 
+    nextButton.style.display = 'none'; 
+    localStorage.clear(); 
+}
+
 
 function showQuestion() {
     console.log("Entering showQuestion function");
