@@ -123,31 +123,26 @@ function selectAnswer(e) {
         button.addEventListener('click', selectAnswer);
     });
 
-
     nextButton.addEventListener('click', nextQuestion);
 }
+
 
 
 
 
 function nextQuestion() {
-   
-    currentQuestionIndex++;
-
     resetState();
-
-   
-    if (currentQuestionIndex < questions.length) {
-      
+    
+    if (currentQuestionIndex < questions.length - 1) { 
+        
         showQuestion();
     } else {
-        
         showResult();
     }
-
-    
-    nextButton.addEventListener('click', nextQuestion);
 }
+{
+    nextButton.addEventListener('click', nextQuestion);}
+
 
 function showQuestion() {
     console.log("Entering showQuestion function");
@@ -155,6 +150,7 @@ function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+    console.log
 
     if (currentQuestion.isTrueFalse) {
         
