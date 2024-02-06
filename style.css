@@ -182,7 +182,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
         font-size: 25px;
         color:#FFFFFF;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+        opacity: 0;
 }
     
     .btn{
@@ -292,7 +292,7 @@ body {
   .spooky-title {
     animation: fadeIn 1s ease-in-out; 
   }
-  
+
   @keyframes fadeInUp {
     0% {
       opacity: 0;
@@ -304,8 +304,4 @@ body {
     }
   }
   
-  .question-container {
-    opacity: 0;
-    animation: fadeInUp 1s forwards; 
-  }
   
