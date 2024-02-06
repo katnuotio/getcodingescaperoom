@@ -132,6 +132,7 @@ function selectAnswer(e) {
 
 function nextQuestion() {
     currentQuestionIndex++;
+    localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
     resetState();
 
     if (currentQuestionIndex < questions.length) {
