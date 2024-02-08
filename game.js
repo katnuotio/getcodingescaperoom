@@ -89,12 +89,43 @@ let currentQuestionIndex= 0;
 let score = 0; 
 
 function startQuiz(){
+    currentQuestionIndex = 0;
+    score= parseInt(localStorage.getItem("score")) || 0;
+    
+    nextButton.innerHTML = "Next";
+    showQuestion ();
+}
+function loadQuiz(){
     currentQuestionIndex = parseInt(localStorage.getItem("currentQuestionIndex")) || 0;
     score= parseInt(localStorage.getItem("score")) || 0;
     
     nextButton.innerHTML = "Next";
     showQuestion ();
 }
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = 0;
+           
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var time = 20 * 60, 
+        display = document.querySelector('#TimerDisplay');
+    startTimer(time, display);
+};
 
 
 
@@ -123,26 +154,40 @@ function selectAnswer(e) {
         button.addEventListener('click', selectAnswer);
     });
 
+
     nextButton.addEventListener('click', nextQuestion);
 }
 
 
 
 
-
 function nextQuestion() {
+   
+    currentQuestionIndex++;
+localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
+
     resetState();
-    
-    if (currentQuestionIndex < questions.length - 1) { 
-        
+
+   
+    if (currentQuestionIndex < questions.length) {
+      
         showQuestion();
     } else {
-        showResult();
+        showCongratulations();
     }
-}
-{
-    nextButton.addEventListener('click', nextQuestion);}
 
+    
+    nextButton.addEventListener('click', nextQuestion);
+
+    
+}
+
+function showCongratulations() {
+    questionElement.innerHTML = "Congratulations! You've escaped the library!";
+    answerButton.innerHTML = ''; 
+    nextButton.style.display = 'none'; 
+    localStorage.clear(); 
+}
 
 function showQuestion() {
     console.log("Entering showQuestion function");
@@ -150,7 +195,6 @@ function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-    console.log
 
     if (currentQuestion.isTrueFalse) {
         
@@ -192,17 +236,10 @@ function showQuestion() {
         submitButton.addEventListener('click', () => {
             const userAnswer = inputField.value.trim().toLowerCase();
             checkScrambledAnswer(userAnswer);
+            console.log("Show Next Button")
         });
 
-        function checkScrambledAnswer(userAnswer) {
-            const currentQuestion = questions[currentQuestionIndex];
-            if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
-                nextButton.style.display = "block";
-                messageContainer.innerHTML = "";
-            } else {
-                messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
-            }
-        }
+        
     }else if (currentQuestion.clues) {
         const cluesContainer = document.createElement("div");
         cluesContainer.id = "clues-container";
@@ -246,6 +283,18 @@ function showQuestion() {
             const userAnswer = inputField.value.trim().toLowerCase();
             checkClueAnswer(userAnswer);
         });
+
+        function checkScrambledAnswer(userAnswer) {
+            const currentQuestion = questions[currentQuestionIndex];
+            if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+                nextButton.style.display = "block";
+                messageContainer.innerHTML = "";
+            } else {
+                messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
+            }
+
+            
+        }
 
         function checkClueAnswer(userAnswer) {
             const currentQuestion = questions[currentQuestionIndex];
