@@ -121,6 +121,11 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
+function showGameOver() {
+    const gameMessage = document.getElementById("game-message");
+    messageContainer.innerHTML =  ("Sorry you could not escape.");
+}
+
 window.onload = function () {
     var time = 20 * 60, 
         display = document.querySelector('#TimerDisplay');
@@ -137,6 +142,8 @@ function resetState(){
 }
 }
 
+let strikes = 0;
+
 function selectAnswer(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
@@ -146,6 +153,13 @@ function selectAnswer(e) {
         nextButton.style.display = "block";
     } else {
         selectedBtn.classList.add("incorrect");
+    }
+
+    strikes++;
+
+    if (strikes===3) {
+        showGameOver();
+        return;
     }
 
     const answerButtons = document.querySelectorAll('.btn');
