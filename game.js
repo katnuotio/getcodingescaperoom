@@ -122,9 +122,10 @@ function startTimer(duration, display) {
 }
 
 function showGameOver() {
-    const gameMessage = document.getElementById("game-message");
-    messageContainer.innerHTML =  ("Sorry you could not escape.");
-}
+    stopGame ();
+    questionElement.innerHTML = "Game Over: You've reached three strikes!";
+    answerButton.innerHTML = ''; 
+    nextButton.style.display = 'none'; }
 
 window.onload = function () {
     var time = 20 * 60, 
@@ -132,6 +133,17 @@ window.onload = function () {
     startTimer(time, display);
 };
 
+function stopGame (){
+    const answerButtons = document.querySelectorAll ('.btn');
+    answerButtons.forEach(button => {
+        button.removeEventListner ('click', selectAnswer);
+        button.disabled= true;
+    });
+
+
+nextButton.removeEventListener('click, nextQuestion');
+nextButton.disabled=true;
+}
 
 
 function resetState(){
@@ -148,18 +160,17 @@ function selectAnswer(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
 
-    if (isCorrect) {
+    if (!isCorrect) {
+        selectedBtn.classList.add("incorrect");
+        strikes++;
+        
+        if (strikes === 3) {
+            showGameOver();
+            return;
+        }
+    } else {
         selectedBtn.classList.add("correct");
         nextButton.style.display = "block";
-    } else {
-        selectedBtn.classList.add("incorrect");
-    }
-
-    strikes++;
-
-    if (strikes===3) {
-        showGameOver();
-        return;
     }
 
     const answerButtons = document.querySelectorAll('.btn');
@@ -168,10 +179,8 @@ function selectAnswer(e) {
         button.addEventListener('click', selectAnswer);
     });
 
-
     nextButton.addEventListener('click', nextQuestion);
 }
-
 
 
 
@@ -181,6 +190,11 @@ function nextQuestion() {
 localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
 
     resetState();
+
+    if(strikes ===3) {
+        showGameOver();
+        return;
+    }
 
    
     if (currentQuestionIndex < questions.length) {
