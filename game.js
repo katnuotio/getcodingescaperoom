@@ -91,6 +91,9 @@ let score = 0;
 function startQuiz(){
     currentQuestionIndex = 0;
     score= parseInt(localStorage.getItem("score")) || 0;
+
+    const timeLimitInSeconds = 1200; 
+    startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
     
     nextButton.innerHTML = "Next";
     showQuestion ();
