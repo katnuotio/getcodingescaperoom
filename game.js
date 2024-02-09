@@ -119,6 +119,9 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             timer = 0;
+                clearInterval(intervalId); 
+                onTimeLimitReached();
+
            
         }
     }, 1000);
@@ -342,6 +345,8 @@ function showQuestion() {
                 messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
             }
         }
+
+        function handleTimeLimitReached() 
         
         answerButton.appendChild(inputField);
         answerButton.appendChild(cluesButton);
