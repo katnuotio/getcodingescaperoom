@@ -133,17 +133,20 @@ window.onload = function () {
     startTimer(time, display);
 };
 
-function stopGame (){
-    const answerButtons = document.querySelectorAll ('.btn');
+
+function stopGame() {
+   
+    const answerButtons = document.querySelectorAll('.btn');
     answerButtons.forEach(button => {
-        button.removeEventListner ('click', selectAnswer);
-        button.disabled= true;
+        button.removeEventListener('click', selectAnswer);
+        button.disabled = true;
     });
 
-
-nextButton.removeEventListener('click, nextQuestion');
-nextButton.disabled=true;
+    
+    nextButton.removeEventListener('click', nextQuestion);
+    nextButton.disabled = true;
 }
+
 
 
 function resetState(){
@@ -163,6 +166,7 @@ function selectAnswer(e) {
     if (!isCorrect) {
         selectedBtn.classList.add("incorrect");
         strikes++;
+        document.getElementById('strike-number').textContent = strikes;
         
         if (strikes === 3) {
             showGameOver();
