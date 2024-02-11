@@ -141,8 +141,10 @@ window.onload = function () {
 
 
 function stopGame() {
+
    
     const answerButtons = document.querySelectorAll('.btn');
+    clearInterval(timerInterval);
     answerButtons.forEach(button => {
         button.removeEventListener('click', selectAnswer);
         button.disabled = true;
@@ -346,7 +348,7 @@ function showQuestion() {
             }
         }
 
-        function handleTimeLimitReached() 
+        
         
         answerButton.appendChild(inputField);
         answerButton.appendChild(cluesButton);
