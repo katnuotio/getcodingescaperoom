@@ -106,9 +106,11 @@ function loadQuiz(){
     showQuestion ();
 }
 
+let timerInterval;
+
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
-    setInterval(function () {
+    timerInterval=setInterval(function () {
         minutes = parseInt(timer / 60, 10)
         seconds = parseInt(timer % 60, 10);
 
