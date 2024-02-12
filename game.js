@@ -84,6 +84,8 @@ answers: [
 const questionElement = document.getElementById("question");
 const answerButton = document.getElementById("answer-buttons");
 const nextButton= document.getElementById("next-btn");
+const messageContainer = document.getElementById("message-container");
+
 
 let currentQuestionIndex= 0;
 let score = 0; 
@@ -348,6 +350,16 @@ function showQuestion() {
             } else {
                 messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
             }
+        }
+
+        function submitScrambledAnswer() {
+            
+            const userAnswer = inputField.value.trim().toLowerCase();
+            checkScrambledAnswer(userAnswer);
+           
+            startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
+        
+            nextButton.disabled = false;
         }
 
         
