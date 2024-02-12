@@ -124,7 +124,6 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = 0;
                 clearInterval(timerInterval); 
-                onTimeLimitReached();
                 display.textContent = "Time's up!";
                 showGameOver();
            
