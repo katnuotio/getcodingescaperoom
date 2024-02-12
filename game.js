@@ -123,7 +123,7 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             timer = 0;
-                clearInterval(intervalId); 
+                clearInterval(timerInterval); 
                 onTimeLimitReached();
                 display.textContent = "Time's up!";
                 showGameOver();
