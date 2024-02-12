@@ -125,7 +125,8 @@ function startTimer(duration, display) {
             timer = 0;
                 clearInterval(intervalId); 
                 onTimeLimitReached();
-
+                display.textContent = "Time's up!";
+                showGameOver();
            
         }
     }, 1000);
