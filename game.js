@@ -180,6 +180,7 @@ function selectAnswer(e) {
         strikes++;
         document.getElementById('strike-number').textContent = strikes;
         
+        
         if (strikes === 3) {
             showGameOver();
             return;
@@ -277,11 +278,11 @@ function showQuestion() {
         submitButton.classList.add("btn");
         answerButton.appendChild(submitButton);
 
-        submitButton.addEventListener('click', () => {
+        submitButton.addEventListener('click', checkScrambledAnswer); {
             const userAnswer = inputField.value.trim().toLowerCase();
             checkScrambledAnswer(userAnswer);
             console.log("Show Next Button")
-        });
+        };
 
         
     }else if (currentQuestion.clues) {
