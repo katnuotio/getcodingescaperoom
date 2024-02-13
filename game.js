@@ -133,7 +133,7 @@ function startTimer(duration, display) {
 
 function showGameOver() {
     stopGame ();
-    questionElement.innerHTML = "Game Over: You've reached three strikes!";
+    questionElement.innerHTML = "Game Over! You could not escape the Library Maze. ";
     answerButton.innerHTML = ''; 
     nextButton.style.display = 'none'; }
 
