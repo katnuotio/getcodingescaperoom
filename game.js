@@ -234,6 +234,11 @@ function showCongratulations() {
     localStorage.clear(); 
 }
 
+function submitName () {
+    var name=document.getElementById("name-input").value;
+    submittedNameElement.textContent = "Submitted Name: " +name;
+}
+
 function showQuestion() {
     console.log("Entering showQuestion function");
     resetState();
