@@ -236,8 +236,45 @@ function showCongratulations() {
 
 function submitName () {
     var name=document.getElementById("name-input").value;
+    var submittedNameElement = document.getElementById("submitted-name");
     submittedNameElement.textContent = "Submitted Name: " +name;
 }
+
+function checkScrambledAnswer(userAnswer) {
+    const currentQuestion = questions[currentQuestionIndex];
+    const messageContainer = document.getElementById("message-container");
+    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+        nextButton.style.display = "block";
+        messageContainer.innerHTML = "";
+    } else {
+        messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
+    }
+
+    
+}
+
+function checkClueAnswer(userAnswer) {
+    const currentQuestion = questions[currentQuestionIndex];
+    const messageContainer = document.getElementById("message-container");
+
+    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+        nextButton.style.display = "block";
+        messageContainer.innerHTML = "";
+    } else {
+        messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
+    }
+}
+
+function submitScrambledAnswer() {
+    
+    const userAnswer = inputField.value.trim().toLowerCase();
+    checkScrambledAnswer(userAnswer);
+   
+    startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
+
+    nextButton.disabled = false;
+}
+
 
 function showQuestion() {
     console.log("Entering showQuestion function");
@@ -270,7 +307,6 @@ function showQuestion() {
         scrambledLettersContainer.classList.add("scrambled-container");
         answerButton.appendChild(scrambledLettersContainer);
 
-        const messageContainer = document.getElementById("message-container");
 
 
         const inputField = document.createElement("input");
@@ -333,40 +369,6 @@ function showQuestion() {
             const userAnswer = inputField.value.trim().toLowerCase();
             checkClueAnswer(userAnswer);
         });
-
-        function checkScrambledAnswer(userAnswer) {
-            const currentQuestion = questions[currentQuestionIndex];
-            if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
-                nextButton.style.display = "block";
-                messageContainer.innerHTML = "";
-            } else {
-                messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
-            }
-
-            
-        }
-
-        function checkClueAnswer(userAnswer) {
-            const currentQuestion = questions[currentQuestionIndex];
-            const messageContainer = document.getElementById("message-container");
-        
-            if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
-                nextButton.style.display = "block";
-                messageContainer.innerHTML = "";
-            } else {
-                messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
-            }
-        }
-
-        function submitScrambledAnswer() {
-            
-            const userAnswer = inputField.value.trim().toLowerCase();
-            checkScrambledAnswer(userAnswer);
-           
-            startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
-        
-            nextButton.disabled = false;
-        }
 
         
         
