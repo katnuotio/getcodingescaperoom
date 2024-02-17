@@ -131,6 +131,14 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
+function incrementStrike() {
+    strikes++;
+    document.getElementById('strike-number').textContent = strikes;
+    
+    if (strikes === 3) {
+        showGameOver();
+    }
+}
 function showGameOver() {
     stopGame ();
     questionElement.innerHTML = "Game Over! You could not escape the Library Maze. ";
@@ -248,6 +256,7 @@ function checkScrambledAnswer(userAnswer) {
         messageContainer.innerHTML = "";
     } else {
         messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
+        incrementStrike();
     }
 
     
@@ -262,6 +271,7 @@ function checkClueAnswer(userAnswer) {
         messageContainer.innerHTML = "";
     } else {
         messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
+        incrementStrike();
     }
 }
 
