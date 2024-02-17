@@ -86,11 +86,20 @@ const answerButton = document.getElementById("answer-buttons");
 const nextButton= document.getElementById("next-btn");
 const messageContainer = document.getElementById("message-container");
 
+const url = https://opentdb.com/api.php?amount=10&category=19&difficulty=easy;
+const response = await fetch(url);
+const data  = await response.json();
+const results = data.results; 
+const formattedResults = results.map((result)) => {
+    console.log(result);
+    
+}
+
 
 let currentQuestionIndex= 0;
 let score = 0; 
 
-function startQuiz(){
+ function startQuiz(){
     currentQuestionIndex = 0;
     score= parseInt(localStorage.getItem("score")) || 0;
 
