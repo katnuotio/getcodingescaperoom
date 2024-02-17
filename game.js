@@ -149,6 +149,9 @@ window.onload = function () {
     var time = 20 * 60, 
         display = document.querySelector('#TimerDisplay');
     startTimer(time, display);
+
+    var submitButton = document.getElementById("submit-button");
+    submitButton.addEventListener("click", submitName);
 };
 
 
