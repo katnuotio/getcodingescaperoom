@@ -265,15 +265,6 @@ function checkClueAnswer(userAnswer) {
     }
 }
 
-function submitScrambledAnswer() {
-    
-    const userAnswer = inputField.value.trim().toLowerCase();
-    checkScrambledAnswer(userAnswer);
-   
-    startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
-
-    nextButton.disabled = false;
-}
 
 
 function showQuestion() {
@@ -309,6 +300,7 @@ function showQuestion() {
 
 
 
+
         const inputField = document.createElement("input");
         inputField.type = "text";
         inputField.id = "answer-input";
@@ -319,11 +311,11 @@ function showQuestion() {
         submitButton.classList.add("btn");
         answerButton.appendChild(submitButton);
 
-        submitButton.addEventListener('click', checkScrambledAnswer); {
+        submitButton.addEventListener("click", () => {
             const userAnswer = inputField.value.trim().toLowerCase();
             checkScrambledAnswer(userAnswer);
-            console.log("Show Next Button")
-        };
+        });
+        
 
         
     }else if (currentQuestion.clues) {
