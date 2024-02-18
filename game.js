@@ -86,21 +86,29 @@ const answerButton = document.getElementById("answer-buttons");
 const nextButton= document.getElementById("next-btn");
 const messageContainer = document.getElementById("message-container");
 
-const url = https://opentdb.com/api.php?amount=10&category=19&difficulty=easy;
-const response = await fetch(url);
-const data  = await response.json();
-const results = data.results; 
-const formattedResults = results.map((result)) => {
-    console.log(result);
+const url = "https://opentdb.com/api.php?amount=10&category=19&difficulty=easy";
 
-    questions: result.question, 
-    answers: [
-        {text: result.correct_answers, correct: true}, 
-        {text: result.incorrect_answers[0], correct: false }, 
-        {text: result.incorrect_answers [1], correct: false }, 
-        {text: result. incorrect_answers [2], correct: false}, 
-    ],
-};
+async function fetchQuestions() {
+    const response = await fetch(url);
+    const data = await response.json();
+    const results = data.results;
+    
+    const formattedResults = results.map((result) => {
+        return {
+            question: result.question,
+            answers: [
+                { text: result.correct_answer, correct: true },
+                { text: result.incorrect_answers[0], correct: false },
+                { text: result.incorrect_answers[1], correct: false },
+                { text: result.incorrect_answers[2], correct: false },
+            ],
+        };
+    });
+
+    console.log(formattedResults);
+}
+
+fetchQuestions();
 
 
 let currentQuestionIndex= 0;
