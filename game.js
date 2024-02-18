@@ -92,8 +92,15 @@ const data  = await response.json();
 const results = data.results; 
 const formattedResults = results.map((result)) => {
     console.log(result);
-    
-}
+
+    questions: result.question, 
+    answers: [
+        {text: result.correct_answers, correct: true}, 
+        {text: result.incorrect_answers[0], correct: false }, 
+        {text: result.incorrect_answers [1], correct: false }, 
+        {text: result. incorrect_answers [2], correct: false}, 
+    ],
+};
 
 
 let currentQuestionIndex= 0;
