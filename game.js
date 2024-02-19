@@ -89,7 +89,7 @@ const messageContainer = document.getElementById("message-container");
 const url = "https://opentdb.com/api.php?amount=10&category=19&difficulty=easy";
 
 async function fetchQuestions() {
-    const response = await fetch(url);
+    const response = await fetch("https://opentdb.com/api.php?amount=10&category=19&difficulty=easy");
     const data = await response.json();
     const results = data.results;
     
@@ -105,18 +105,42 @@ async function fetchQuestions() {
         };
     });
 
-    console.log(formattedResults);
+    console.log(results);
 }
 
-fetchQuestions();
+
 
 
 let currentQuestionIndex= 0;
 let score = 0; 
 
+async function startQuiz() {
+    const fetchedQuestions = await fetchQuestions();
+
+    if (fetchedQuestions.length > 0) {
+        questions = fetchedQuestions;
+        currentQuestionIndex = 0;
+        score = 0;
+
+        const timeLimitInSeconds = 1200;
+        startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
+
+        nextButton.innerHTML = "Next";
+        showQuestion();
+    }
+}
+
  function startQuiz(){
     currentQuestionIndex = 0;
     score= parseInt(localStorage.getItem("score")) || 0;
+
+    const url = window.location.href;
+    console.log(url);
+    const difficulty = url.split("=")[1];
+    console.log(difficulty);
+    if (diffculty === "easy") {
+        questions ==easyquestions;
+    }
 
     const timeLimitInSeconds = 1200; 
     startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
