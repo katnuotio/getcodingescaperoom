@@ -114,14 +114,23 @@ async function fetchQuestions() {
 let currentQuestionIndex= 0;
 let score = 0; 
 
-async function startQuiz() {
+async function startQuiz(selectedDifficulty) {
     const fetchedQuestions = await fetchQuestions();
-
     if (fetchedQuestions.length > 0) {
         questions = fetchedQuestions;
         currentQuestionIndex = 0;
         score = 0;
 
+        currentQuestionIndex = 0;
+        score= parseInt(localStorage.getItem("score")) || 0;
+
+        const url = window.location.href;
+        console.log("https://opentdb.com/api.php?amount=10&category=19&difficulty=easy");
+        const difficulty = url.split("=")[1];
+        console.log(difficulty);
+        if (selectedDifficulty === "easy") {
+            questions == easyquestions;
+        }
         const timeLimitInSeconds = 1200;
         startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
 
@@ -130,26 +139,6 @@ async function startQuiz() {
     }
 }
 
- function startQuiz(){
-
-    
-    currentQuestionIndex = 0;
-    score= parseInt(localStorage.getItem("score")) || 0;
-
-    const url = window.location.href;
-    console.log(url);
-    const difficulty = url.split("=")[1];
-    console.log(difficulty);
-    if (diffculty === "easy") {
-        questions ==easyquestions;
-    }
-
-    const timeLimitInSeconds = 1200; 
-    startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
-    
-    nextButton.innerHTML = "Next";
-    showQuestion ();
-}
 function loadQuiz(){
     currentQuestionIndex = parseInt(localStorage.getItem("currentQuestionIndex")) || 0;
     score= parseInt(localStorage.getItem("score")) || 0;
