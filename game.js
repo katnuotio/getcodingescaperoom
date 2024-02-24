@@ -131,6 +131,8 @@ async function startQuiz() {
 }
 
  function startQuiz(){
+
+    
     currentQuestionIndex = 0;
     score= parseInt(localStorage.getItem("score")) || 0;
 
