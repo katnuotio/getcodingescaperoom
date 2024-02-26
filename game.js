@@ -128,9 +128,7 @@ async function startQuiz(selectedDifficulty) {
         console.log("https://opentdb.com/api.php?amount=10&category=19&difficulty=easy");
         const difficulty = url.split("=")[1];
         console.log(difficulty);
-        if (selectedDifficulty === "easy") {
-            questions == easyquestions;
-        }
+     
         const timeLimitInSeconds = 1200;
         startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
 
@@ -189,7 +187,7 @@ window.onload = function () {
         display = document.querySelector('#TimerDisplay');
     startTimer(time, display);
 
-    var submitButton = document.getElementById("submit-button");
+    var submitButton = document.getElementById("submit-name");
     submitButton.addEventListener("click", submitName);
 };
 
@@ -323,6 +321,7 @@ function showQuestion() {
     console.log("Entering showQuestion function");
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
+    console.log (currentQuestion)
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
