@@ -1,4 +1,4 @@
-const questions =[
+let questions =[
 {
         question: "In the enchanting library, amidst secrets so wide, a hidden message you found, a treasure to guide; a story, a tale, or something sweet, which word's the key? Let the adventure greet!   ",
     answers: [
@@ -88,26 +88,34 @@ const messageContainer = document.getElementById("message-container");
 
 const url = "https://opentdb.com/api.php?amount=10&category=19&difficulty=easy";
 
-async function fetchQuestions() {
+async function fetchMediumQuestions() {
     const response = await fetch("https://opentdb.com/api.php?amount=10&category=19&difficulty=easy");
     const data = await response.json();
     const results = data.results;
-    
+    console.log("Results: ",results)   
+        
     const formattedResults = results.map((result) => {
+        if (result.type === "multiple") {
+            return {
+                question: result.question,
+                answers: [
+                    { text: result.correct_answer, correct: true },
+                    { text: result.incorrect_answers[0], correct: false },
+                    { text: result.incorrect_answers[1], correct: false },
+                    { text: result.incorrect_answers[2], correct: false },
+                ],
+            };
+        };
         return {
             question: result.question,
             answers: [
                 { text: result.correct_answer, correct: true },
                 { text: result.incorrect_answers[0], correct: false },
-                { text: result.incorrect_answers[1], correct: false },
-                { text: result.incorrect_answers[2], correct: false },
-            ],
-        };
+            ]
+        }
     });
-
-    console.log(results);
+    return formattedResults;
 }
-
 
 
 
@@ -115,7 +123,20 @@ let currentQuestionIndex= 0;
 let score = 0; 
 
 async function startQuiz(selectedDifficulty) {
-    const fetchedQuestions = await fetchQuestions();
+    let fetchedQuestions;
+
+    if (selectedDifficulty === "easy"){
+        fetchedQuestions = questions;
+    }
+    else if (selectedDifficulty === "medium") {
+        fetchedQuestions = await fetchMediumQuestions()
+    }
+    else if (selectedDifficulty === "hard") {
+        fetchedQuestions = await fetchHardQuestions()
+    }
+        
+
+   
     if (fetchedQuestions.length > 0) {
         questions = fetchedQuestions;
         currentQuestionIndex = 0;
@@ -283,7 +304,7 @@ function showCongratulations() {
 }
 
 function submitName () {
-    var name=document.getElementById("name-input").value;
+    var name=document.getElementById("player-name-input").value;
     var submittedNameElement = document.getElementById("submitted-name");
     submittedNameElement.textContent = "Submitted Name: " +name;
 }
