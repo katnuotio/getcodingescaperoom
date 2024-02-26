@@ -117,12 +117,44 @@ async function fetchMediumQuestions() {
     return formattedResults;
 }
 
+async function fetchHardQuestions() {
+    const response = await fetch("https://opentdb.com/api.php?amount=10&category=19&difficulty=medium");
+    const data = await response.json();
+    const results = data.results;
+    console.log("Results: ",results)   
+        
+    const formattedResults = results.map((result) => {
+        if (result.type === "multiple") {
+            return {
+                question: result.question,
+                answers: [
+                    { text: result.correct_answer, correct: true },
+                    { text: result.incorrect_answers[0], correct: false },
+                    { text: result.incorrect_answers[1], correct: false },
+                    { text: result.incorrect_answers[2], correct: false },
+                ],
+            };
+        };
+        return {
+            question: result.question,
+            answers: [
+                { text: result.correct_answer, correct: true },
+                { text: result.incorrect_answers[0], correct: false },
+            ]
+        }
+    });
+    return formattedResults;
+}
+
 
 
 let currentQuestionIndex= 0;
 let score = 0; 
 
-async function startQuiz(selectedDifficulty) {
+async function startQuiz() {
+    const searchParams = new URLSearchParams(window.location.search);
+    const selectedDifficulty = searchParams.get("level")
+
     let fetchedQuestions;
 
     if (selectedDifficulty === "easy"){
