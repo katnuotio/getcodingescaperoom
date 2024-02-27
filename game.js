@@ -338,7 +338,7 @@ function showCongratulations() {
 function submitName () {
     var name=document.getElementById("player-name-input").value;
     var submittedNameElement = document.getElementById("submitted-name");
-    submittedNameElement.textContent = "Submitted Name: " +name;
+    submittedNameElement.textContent = "Explorer: " +name;
 }
 
 function checkScrambledAnswer(userAnswer) {
