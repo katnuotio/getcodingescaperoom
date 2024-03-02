@@ -528,18 +528,16 @@ const categories = {
 
 function populateSelect() {
 var ele = document.getElementById('sel');
-for (var i = 0; i < birds.length; i++) {
-    // POPULATE SELECT ELEMENT WITH JSON.
+for (var i = 0; i < categories.length; i++) {
     ele.innerHTML = ele.innerHTML +
-        '<option>' + birds[i]['Bird_Name'] + '</option>';
+        '<option>' + categories[i]['Category_Name'] + '</option>';
 }
 }
 
 function show() {
-// GET THE SELECTED VALUE FROM <select> ELEMENT AND SHOW IT.
 var msg = document.getElementById('msg');
-for (var i = 0; i < birds.length; i++)
+for (var i = 0; i < categories.length; i++)
 {
-    msg.innerHTML = birds[i].ID + " " + birds[i].Bird_Name;
+    msg.innerHTML = categories[i].ID + " " + categories[i].Category_Name;
 }
 }
