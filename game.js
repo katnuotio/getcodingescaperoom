@@ -527,17 +527,17 @@ const categories = {
 };
 
 function populateSelect() {
-var ele = document.getElementById('sel');
-for (var i = 0; i < categories.length; i++) {
-    ele.innerHTML = ele.innerHTML +
-        '<option>' + categories[i]['Category_Name'] + '</option>';
-}
+    var ele = document.getElementById('sel');
+    var categories = categories.trivia_categories;
+    for (var i = 0; i < categories.length; i++) {
+        ele.innerHTML += '<option value="' + categories[i]['id'] + '">' + categories[i]['name'] + '</option>';
+    }
 }
 
 function show() {
-var msg = document.getElementById('msg');
-for (var i = 0; i < categories.length; i++)
-{
-    msg.innerHTML = categories[i].ID + " " + categories[i].Category_Name;
-}
+    var msg = document.getElementById('msg');
+    var categories = categories.trivia_categories;
+    for (var i = 0; i < categories.length; i++) {
+        msg.innerHTML += categories[i].id + " " + categories[i].name + "<br>";
+    }
 }
