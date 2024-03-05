@@ -86,10 +86,13 @@ const answerButton = document.getElementById("answer-buttons");
 const nextButton= document.getElementById("next-btn");
 const messageContainer = document.getElementById("message-container");
 
-const url = "https://opentdb.com/api.php?amount=10&category=19&difficulty=easy";
+const NUM_QUES = 10;
+let categoryId;
+
+const url = `https://opentdb.com/api.php?amount=${NUM_QUES}&category=19&difficulty=easy`;
 
 async function fetchMediumQuestions() {
-    const response = await fetch("https://opentdb.com/api.php?amount=10&category=19&difficulty=easy");
+    const response = await fetch(`https://opentdb.com/api.php?amount=${NUM_QUES}&category=${categoryId}&difficulty=easy`);
     const data = await response.json();
     const results = data.results;
     console.log("Results: ",results)   
@@ -103,7 +106,7 @@ async function fetchMediumQuestions() {
                     { text: result.incorrect_answers[0], correct: false },
                     { text: result.incorrect_answers[1], correct: false },
                     { text: result.incorrect_answers[2], correct: false },
-                ],
+                ].sort(() => Math.random() - 0.5),
             };
         };
         return {
@@ -111,14 +114,14 @@ async function fetchMediumQuestions() {
             answers: [
                 { text: result.correct_answer, correct: true },
                 { text: result.incorrect_answers[0], correct: false },
-            ]
+            ].sort(() => Math.random() - 0.5),
         }
     });
     return formattedResults;
 }
 
 async function fetchHardQuestions() {
-    const response = await fetch("https://opentdb.com/api.php?amount=10&category=19&difficulty=medium");
+    const response = await fetch(`https://opentdb.com/api.php?amount=${NUM_QUES}&category=${categoryId}&difficulty=medium`);
     const data = await response.json();
     const results = data.results;
     console.log("Results: ",results)   
@@ -132,7 +135,7 @@ async function fetchHardQuestions() {
                     { text: result.incorrect_answers[0], correct: false },
                     { text: result.incorrect_answers[1], correct: false },
                     { text: result.incorrect_answers[2], correct: false },
-                ],
+                ].sort(() => Math.random() - 0.5),
             };
         };
         return {
@@ -140,7 +143,7 @@ async function fetchHardQuestions() {
             answers: [
                 { text: result.correct_answer, correct: true },
                 { text: result.incorrect_answers[0], correct: false },
-            ]
+            ].sort(() => Math.random() - 0.5),
         }
     });
     return formattedResults;
@@ -154,6 +157,7 @@ let score = 0;
 async function startQuiz() {
     const searchParams = new URLSearchParams(window.location.search);
     const selectedDifficulty = searchParams.get("level")
+    categoryId = searchParams.get("categoryId")
 
     let fetchedQuestions;
 
@@ -170,7 +174,8 @@ async function startQuiz() {
 
    
     if (fetchedQuestions.length > 0) {
-        questions = fetchedQuestions;
+        questions = fetchedQuestions; 
+        questions.sort(() => Math.random() - 0.5)
         currentQuestionIndex = 0;
         score = 0;
 

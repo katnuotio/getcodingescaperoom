@@ -13,9 +13,16 @@
     </div>
     <div class="container">
         <h1 style="text-align: center;">Escape The Library</h1>
-        <a href="game.html?level=easy" class="button2">Easy</a>
-        <a href="game.html?level=medium" class="button2">Medium</a>
-        <a href="game.html?level=hard" class="button2">Hard</a>
+        <a href="game.html?level=easy" id="easyButton" class="button2">Easy</a>
+        <a href="game.html?level=medium" id="mediumButton" class="button2">Medium</a>
+        <a href="game.html?level=hard" id="hardButton" class="button2">Hard</a>
+      
+
+        <label for="categories">Choose A Category: </label> 
+        <select name="categories" id="categories"onchange="show(this.value)"> 
+        </select>
+      
+
         <script src="levels.js"></script>
     </div>
 </body>
