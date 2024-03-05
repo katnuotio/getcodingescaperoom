@@ -7,6 +7,20 @@ body{
     overflow-x: hidden;
 overflow-y: auto;}
 
+@media only screen and (max-width: 1200px) {
+   
+}
+@media only screen and (max-width: 992px) {
+   
+}
+@media only screen and (max-width: 767px) {
+   
+}
+@media only screen and (max-width: 480px) {
+   
+}
+
+
 [class*="col-"] {
     width: 100%;}
 
