@@ -20,6 +20,12 @@ overflow-y: auto;}
    
 }
 
+@media only screen and (max-width: 600px) {
+    body {
+      font-size: 16px;
+    }
+  }
+
 
 [class*="col-"] {
     width: 100%;}
@@ -140,7 +146,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 
    
   a.button2{
-    display:block;
+    display:flex;
     padding:0.9em 10em;
     border:0.16em solid #FFFFFF;
     margin:0 0.3em 0.3em 0;
@@ -167,22 +173,20 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
  transform: scale(1.1);
     }
 
-    @media only screen and (max-width: 600px) {
-        div.example {
-          font-size: 20px;
-        }
-      }
+    
+      
 
     .text-box {
-        max-width: 70%;
+        max-width: 80%;
         width: 80%;
         background-color: #3b2424;
         border: 2px solid #333;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 50px;
-        max-height: 120%;
+        padding: 150%, 150%, 150%, 150%;
+        max-height: 160%;
        display:inline-block;
+       
     }
     
     
@@ -200,6 +204,7 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 }
     
     .btn{
+        display: flex;
       background: #FFFFFF;  
       color:#222;
       font: weight 500px;
@@ -310,15 +315,19 @@ h2{
 
 
 .timer {
+    margin-top: 5%;
     border: 6px solid black;
-    padding: 10px;
+    padding: 2% 2% 2% 2%;
     border-radius: 10px;
     background-color: #040000;
+    margin-left: 5%;
+    margin-right: 5%;
     
    
 }
 
 #submit-name.btn {
+    display: inline-block;
     padding: 8px 20px;
     font-size: 14px;
     width: 15% ;
