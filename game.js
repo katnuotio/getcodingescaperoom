@@ -153,6 +153,8 @@ async function fetchHardQuestions() {
 
 let currentQuestionIndex= 0;
 let score = 0; 
+let strikes = 0;
+let timerInterval;
 
 async function startQuiz() {
     const searchParams = new URLSearchParams(window.location.search);
@@ -203,7 +205,7 @@ function loadQuiz(){
     showQuestion ();
 }
 
-let timerInterval;
+
 
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -234,6 +236,13 @@ function incrementStrike() {
         showGameOver();
     }
 }
+
+function submitName () {
+    var name=document.getElementById("player-name-input").value;
+    var submittedNameElement = document.getElementById("submitted-name");
+    submittedNameElement.textContent = "Explorer: " +name;
+}
+
 function showGameOver() {
     stopGame ();
     questionElement.innerHTML = "Game Over! You could not escape the Library Maze. ";
@@ -274,106 +283,6 @@ function resetState(){
 
 }
 }
-
-let strikes = 0;
-
-function selectAnswer(e) {
-    const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true";
-
-    if (!isCorrect) {
-        selectedBtn.classList.add("incorrect");
-        strikes++;
-        document.getElementById('strike-number').textContent = strikes;
-        
-        
-        if (strikes === 3) {
-            showGameOver();
-            return;
-        }
-    } else {
-        selectedBtn.classList.add("correct");
-        nextButton.style.display = "block";
-    }
-
-    const answerButtons = document.querySelectorAll('.btn');
-    answerButtons.forEach(button => {
-        button.removeEventListener('click', selectAnswer);
-        button.addEventListener('click', selectAnswer);
-    });
-
-    nextButton.addEventListener('click', nextQuestion);
-}
-
-
-
-function nextQuestion() {
-   
-    currentQuestionIndex++;
-localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
-
-    resetState();
-
-    if(strikes ===3) {
-        showGameOver();
-        return;
-    }
-
-   
-    if (currentQuestionIndex < questions.length) {
-      
-        showQuestion();
-    } else {
-        showCongratulations();
-    }
-
-    
-    nextButton.addEventListener('click', nextQuestion);
-
-    
-}
-
-function showCongratulations() {
-    questionElement.innerHTML = "Congratulations! You've escaped the library!";
-    answerButton.innerHTML = ''; 
-    nextButton.style.display = 'none'; 
-    localStorage.clear(); 
-}
-
-function submitName () {
-    var name=document.getElementById("player-name-input").value;
-    var submittedNameElement = document.getElementById("submitted-name");
-    submittedNameElement.textContent = "Explorer: " +name;
-}
-
-function checkScrambledAnswer(userAnswer) {
-    const currentQuestion = questions[currentQuestionIndex];
-    const messageContainer = document.getElementById("message-container");
-    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
-        nextButton.style.display = "block";
-        messageContainer.innerHTML = "";
-    } else {
-        messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
-        incrementStrike();
-    }
-
-    
-}
-
-function checkClueAnswer(userAnswer) {
-    const currentQuestion = questions[currentQuestionIndex];
-    const messageContainer = document.getElementById("message-container");
-
-    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
-        nextButton.style.display = "block";
-        messageContainer.innerHTML = "";
-    } else {
-        messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
-        incrementStrike();
-    }
-}
-
-
 
 function showQuestion() {
     console.log("Entering showQuestion function");
@@ -494,6 +403,104 @@ function showQuestion() {
         });
     }
 }
+
+
+function selectAnswer(e) {
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+
+    if (!isCorrect) {
+        selectedBtn.classList.add("incorrect");
+        strikes++;
+        document.getElementById('strike-number').textContent = strikes;
+        
+        
+        if (strikes === 3) {
+            showGameOver();
+            return;
+        }
+    } else {
+        selectedBtn.classList.add("correct");
+        nextButton.style.display = "block";
+    }
+
+    const answerButtons = document.querySelectorAll('.btn');
+    answerButtons.forEach(button => {
+        button.removeEventListener('click', selectAnswer);
+        button.addEventListener('click', selectAnswer);
+    });
+
+    nextButton.addEventListener('click', nextQuestion);
+}
+
+
+
+function nextQuestion() {
+   
+    currentQuestionIndex++;
+localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
+
+    resetState();
+
+    if(strikes ===3) {
+        showGameOver();
+        return;
+    }
+
+   
+    if (currentQuestionIndex < questions.length) {
+      
+        showQuestion();
+    } else {
+        showCongratulations();
+    }
+
+    
+    nextButton.addEventListener('click', nextQuestion);
+
+    
+}
+
+function showCongratulations() {
+    questionElement.innerHTML = "Congratulations! You've escaped the library!";
+    answerButton.innerHTML = ''; 
+    nextButton.style.display = 'none'; 
+    localStorage.clear(); 
+}
+
+
+function checkScrambledAnswer(userAnswer) {
+    const currentQuestion = questions[currentQuestionIndex];
+    const messageContainer = document.getElementById("message-container");
+    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+        nextButton.style.display = "block";
+        nextButton.addEventListener('click', nextQuestion);
+        messageContainer.innerHTML = "";
+    } else {
+        messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
+        incrementStrike();
+    }
+
+    
+}
+
+function checkClueAnswer(userAnswer) {
+    const currentQuestion = questions[currentQuestionIndex];
+    const messageContainer = document.getElementById("message-container");
+
+    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+        nextButton.style.display = "block";
+         nextButton.addEventListener('click', nextQuestion);
+        messageContainer.innerHTML = "";
+    } else {
+        messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
+        incrementStrike();
+    }
+}
+
+
+
+
     
       
     
