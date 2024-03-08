@@ -433,6 +433,35 @@ function selectAnswer(e) {
     nextButton.addEventListener('click', nextQuestion);
 }
 
+function checkScrambledAnswer(userAnswer) {
+    const currentQuestion = questions[currentQuestionIndex];
+    const messageContainer = document.getElementById("message-container");
+    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+        nextButton.style.display = "block";
+        nextButton.addEventListener('click', nextQuestion);
+        messageContainer.innerHTML = "";
+    } else {
+        messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
+        incrementStrike();
+    }
+
+    
+}
+
+function checkClueAnswer(userAnswer) {
+    const currentQuestion = questions[currentQuestionIndex];
+    const messageContainer = document.getElementById("message-container");
+
+    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+        nextButton.style.display = "block";
+         nextButton.addEventListener('click', nextQuestion);
+        messageContainer.innerHTML = "";
+    } else {
+        messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
+        incrementStrike();
+    }
+}
+
 
 
 function nextQuestion() {
@@ -468,35 +497,6 @@ function showCongratulations() {
     localStorage.clear(); 
 }
 
-
-function checkScrambledAnswer(userAnswer) {
-    const currentQuestion = questions[currentQuestionIndex];
-    const messageContainer = document.getElementById("message-container");
-    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
-        nextButton.style.display = "block";
-        nextButton.addEventListener('click', nextQuestion);
-        messageContainer.innerHTML = "";
-    } else {
-        messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
-        incrementStrike();
-    }
-
-    
-}
-
-function checkClueAnswer(userAnswer) {
-    const currentQuestion = questions[currentQuestionIndex];
-    const messageContainer = document.getElementById("message-container");
-
-    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
-        nextButton.style.display = "block";
-         nextButton.addEventListener('click', nextQuestion);
-        messageContainer.innerHTML = "";
-    } else {
-        messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
-        incrementStrike();
-    }
-}
 
 
 
