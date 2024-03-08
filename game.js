@@ -149,8 +149,6 @@ async function fetchHardQuestions() {
     return formattedResults;
 }
 
-
-
 let currentQuestionIndex= 0;
 let score = 0; 
 let strikes = 0;
@@ -242,38 +240,6 @@ function submitName () {
     var submittedNameElement = document.getElementById("submitted-name");
     submittedNameElement.textContent = "Explorer: " +name;
 }
-
-function showGameOver() {
-    stopGame ();
-    questionElement.innerHTML = "Game Over! You could not escape the Library Maze. ";
-    answerButton.innerHTML = ''; 
-    nextButton.style.display = 'none'; }
-
-window.onload = function () {
-    var time = 20 * 60, 
-        display = document.querySelector('#TimerDisplay');
-    startTimer(time, display);
-
-    var submitButton = document.getElementById("submit-name");
-    submitButton.addEventListener("click", submitName);
-};
-
-
-function stopGame() {
-
-   
-    const answerButtons = document.querySelectorAll('.btn');
-    clearInterval(timerInterval);
-    answerButtons.forEach(button => {
-        button.removeEventListener('click', selectAnswer);
-        button.disabled = true;
-    });
-
-    
-    nextButton.removeEventListener('click', nextQuestion);
-    nextButton.disabled = true;
-}
-
 
 
 function resetState(){
@@ -497,7 +463,36 @@ function showCongratulations() {
     localStorage.clear(); 
 }
 
+function showGameOver() {
+    stopGame ();
+    questionElement.innerHTML = "Game Over! You could not escape the Library Maze. ";
+    answerButton.innerHTML = ''; 
+    nextButton.style.display = 'none'; }
 
+window.onload = function () {
+    var time = 20 * 60, 
+        display = document.querySelector('#TimerDisplay');
+    startTimer(time, display);
+
+    var submitButton = document.getElementById("submit-name");
+    submitButton.addEventListener("click", submitName);
+};
+
+
+function stopGame() {
+
+   
+    const answerButtons = document.querySelectorAll('.btn');
+    clearInterval(timerInterval);
+    answerButtons.forEach(button => {
+        button.removeEventListener('click', selectAnswer);
+        button.disabled = true;
+    });
+
+    
+    nextButton.removeEventListener('click', nextQuestion);
+    nextButton.disabled = true;
+}
 
 
 
