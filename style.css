@@ -1,5 +1,6 @@
 body{ 
     margin: 0;
+    min-height: 100vh;
     padding: 0;
     font-size: 21px;
     color:rgb(255, 255, 255);
@@ -145,28 +146,24 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     transform: rotate(-20deg);}
 
    
-  a.button2{
-    display:flex;
-    padding:5% 10% 5% 10%;
-    border:0.16em solid #FFFFFF;
-    margin:0 0.3em 0.3em 0;
-    padding-right:5%;
-    padding-left: 5%;
-    margin-top: 1%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-    text-align: center;
-    box-sizing: border-box;
-    text-decoration:none;
-    text-transform:uppercase;
-    text-align:center;
-    font-family:'Roboto',sans-serif;
-    font-weight:400;
-    color:#FFFFFF;
-    text-align:center;
-    transition: all 0.15s;}
-   
+    .button2 {
+        display: flex;
+        padding: 2.5% 0.2%;
+        border: 0.16em solid #FFFFFF;
+        padding-right: 10%;
+        padding-left: 4%;
+        width: 5%;
+        box-sizing: border-box;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500; 
+        color: #FFFFFF;
+        text-align: center; 
+        transition: all 0.15s;
+        margin: 3% auto; 
+    }
+    
     a.button2:hover{
     color:#a32b2b;
  border-color:#a32b2b;
@@ -202,24 +199,27 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
-    
-    .btn{
-        display: flex;
-      background: #FFFFFF;  
-      color:#222;
-      font: weight 500px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      width:100%;
-      border: 1px solid #222;
-      padding: 10px;
-      margin: 10px 0; 
-      text-align: left;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.3s;
-     background-color: #5f6164;  
+.btn {
+    display: flex;
+    background: #FFFFFF;
+    color: #222;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 80%;
+    border: 1px solid #222;
+    padding: 2% 5%;
+    margin: 10px auto; /* Set left and right margins to auto */
+    text-align: center; /* Center text within the button */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #5f6164;
     transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-    }
+}
+
+
+    
+    
 
     .btn:hover{
         
