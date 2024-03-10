@@ -149,6 +149,8 @@ async function fetchHardQuestions() {
     return formattedResults;
 }
 
+
+
 let currentQuestionIndex= 0;
 let score = 0; 
 let strikes = 0;
@@ -399,35 +401,6 @@ function selectAnswer(e) {
     nextButton.addEventListener('click', nextQuestion);
 }
 
-function checkScrambledAnswer(userAnswer) {
-    const currentQuestion = questions[currentQuestionIndex];
-    const messageContainer = document.getElementById("message-container");
-    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
-        nextButton.style.display = "block";
-        nextButton.addEventListener('click', nextQuestion);
-        messageContainer.innerHTML = "";
-    } else {
-        messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
-        incrementStrike();
-    }
-
-    
-}
-
-function checkClueAnswer(userAnswer) {
-    const currentQuestion = questions[currentQuestionIndex];
-    const messageContainer = document.getElementById("message-container");
-
-    if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
-        nextButton.style.display = "block";
-         nextButton.addEventListener('click', nextQuestion);
-        messageContainer.innerHTML = "";
-    } else {
-        messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
-        incrementStrike();
-    }
-}
-
 
 
 function nextQuestion() {
@@ -463,20 +436,14 @@ function showCongratulations() {
     localStorage.clear(); 
 }
 
+
 function showGameOver() {
     stopGame ();
     questionElement.innerHTML = "Game Over! You could not escape the Library Maze. ";
     answerButton.innerHTML = ''; 
     nextButton.style.display = 'none'; }
 
-window.onload = function () {
-    var time = 20 * 60, 
-        display = document.querySelector('#TimerDisplay');
-    startTimer(time, display);
 
-    var submitButton = document.getElementById("submit-name");
-    submitButton.addEventListener("click", submitName);
-};
 
 
 function stopGame() {
@@ -494,12 +461,17 @@ function stopGame() {
     nextButton.disabled = true;
 }
 
+window.onload = function () {
+    var time = 20 * 60, 
+        display = document.querySelector('#TimerDisplay');
+    startTimer(time, display);
+
+    var submitButton = document.getElementById("submit-name");
+    submitButton.addEventListener("click", submitName);
+};
 
 
-    
-      
-    
-    
-    
+
+
 
 startQuiz();
