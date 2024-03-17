@@ -352,6 +352,9 @@ function checkScrambledAnswer(userAnswer) {
     if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
         nextButton.style.display = "block";
         messageContainer.innerHTML = "";
+         nextButton.addEventListener("click", nextQuestion);
+
+
     } else {
         messageContainer.innerHTML = "<p style='color: red;'>Incorrect! Try Again!</p>";
         incrementStrike();
@@ -367,6 +370,8 @@ function checkClueAnswer(userAnswer) {
     if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
         nextButton.style.display = "block";
         messageContainer.innerHTML = "";
+         nextButton.addEventListener("click", nextQuestion);
+
     } else {
         messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
         incrementStrike();
