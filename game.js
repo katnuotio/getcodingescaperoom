@@ -440,5 +440,3 @@ window.onload = function () {
   submitButton.addEventListener("click", submitName);
 };
 startQuiz();
-
-
