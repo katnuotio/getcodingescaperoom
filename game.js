@@ -162,13 +162,26 @@ async function startQuiz() {
     let fetchedQuestions;
 
     if (selectedDifficulty === "easy"){
-        fetchedQuestions = questions;
+        var time =  20 * 60,
+        display = document.querySelector("#TimerDisplay")
+    startTimer (time,display);
+fetchedQuestions = questions;
+
     }
     else if (selectedDifficulty === "medium") {
-        fetchedQuestions = await fetchMediumQuestions()
+        var time= 10 * 60, 
+        display = document.querySelector("#TimerDisplay");
+        startTimer (time, display);
+        const numberOfQuestions=15;
+        fetchedQuestions = await fetchMediumQuestions("easy", numberOfQuestions);
+
     }
     else if (selectedDifficulty === "hard") {
-        fetchedQuestions = await fetchHardQuestions()
+        var time = 10 * 60, 
+        display=document.querySelector("TimerDisplay");
+        startTimer (time,display);
+        const numberOfQuestions = 15;
+        fetchedQuestions = await fetchHardQuestions("hard", numberOfQuestions);
     }
         
 
@@ -215,6 +228,9 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = minutes + ":" + seconds;
+      
+
+
 
         if (--timer < 0) {
             timer = 0;
@@ -512,7 +528,6 @@ const categories = {
     {id: 10, name: "Entertainment: Books"},
     {id: 11, name: "Entertainment: Film"},
     {id: 12, name: "Entertainment: Music"},
-    {id: 13, name: "Entertainment: Musicals & Theatres"},
     {id: 14, name: "Entertainment: Television"},
     {id: 15, name: "Entertainment: Video Games"},
     {id: 16, name: "Entertainment: Board Games"}, 
