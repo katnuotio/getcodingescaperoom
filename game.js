@@ -217,11 +217,11 @@ function loadQuiz(){
 }
 
 let timerInterval;
-document.addEventListener("DOMContentLoaded", function () {
-  var time = 20 * 60;
-  var display = document.getElementById("TimerDisplay");
+{
+  let time = 20 * 60;
+  let display = document.getElementById("TimerDisplay");
   startTimer(time, display);
-});
+};
 
 function startTimer(duration, display) {
   var timer = duration;
@@ -352,6 +352,8 @@ localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
 }
 
 function showCongratulations() {
+    
+    clearInterval(timerInterval); 
     questionElement.innerHTML = "Congratulations! You've escaped the library!";
     answerButton.innerHTML = ''; 
     nextButton.style.display = 'none'; 
