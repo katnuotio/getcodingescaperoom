@@ -9,7 +9,6 @@ function populateSelect() {
 }
 
 function show(id) {
-    console.log("showwthings");
     console.log (id);
     const easyButton = document.getElementById("easyButton");
     const mediumButton = document.getElementById("mediumButton");

@@ -168,13 +168,15 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 
     .text-box {
         max-width: 70%;
+        height:auto;
         width: 80%;
         background-color: #3b2424;
         border: 2px solid #333;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         padding: 50px;
-        max-height: 120%;
+        max-height: 150%;
+        box-sizing: border-box;
        display:inline-block;
     }
     
@@ -280,6 +282,15 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
         cursor: pointer;
     display:none}
 
+    @media (max-width: 768px) {
+    #next-btn {
+        width: 100%; 
+        max-width: 200px; 
+        padding: 12px; 
+        font-size: 16px;
+    }
+}
+
     .correct{
         background: #4d9163
     }
@@ -321,6 +332,8 @@ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
     .clues-Button{
         display: inline;
     }
+}
+
 
     .submitted-name{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -333,9 +346,7 @@ color: #f2f2f2;
         padding-top: 10%; 
     }
 }
-    
 
-}
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 * {

@@ -217,30 +217,32 @@ function loadQuiz(){
 }
 
 let timerInterval;
+document.addEventListener("DOMContentLoaded", function () {
+  var time = 20 * 60;
+  var display = document.getElementById("TimerDisplay");
+  startTimer(time, display);
+});
 
 function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    timerInterval=setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
+  var timer = duration;
+  setInterval(function () {
+    var minutes = parseInt(timer / 60, 10);
+    var seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
-      
+    display.textContent = minutes + ":" + seconds;
 
-
-
-        if (--timer < 0) {
-            timer = 0;
-                clearInterval(timerInterval); 
-                display.textContent = "Time's up!";
-                showGameOver();
-           
-        }
-    }, 1000);
+    if (--timer < 0) {
+      timer = 0;
+      clearInterval(timerInterval);
+      display.textContent = "Time's up!";
+      showGameOver();
+    }
+  }, 1000);
 }
+
 
 function incrementStrike() {
     strikes++;
