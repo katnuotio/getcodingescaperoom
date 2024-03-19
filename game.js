@@ -155,7 +155,7 @@ async function startQuiz() {
     fetchedQuestions = await fetchQuestions("easy", numberOfQuestions);
   } else if (selectedDifficulty === "hard") {
     timeLimitInSeconds = 5 * 60;
-    numberOfQuestions = 25;
+    numberOfQuestions = 10;
     fetchedQuestions = await fetchQuestions("medium", numberOfQuestions);
   }
 
@@ -414,6 +414,7 @@ function nextQuestion() {
 function showCongratulations() {
   questionElement.innerHTML = "Congratulations! You've escaped the library!";
   answerButton.innerHTML = "";
+  messageContainer.innerHTML = "";
   nextButton.style.display = "none";
   localStorage.clear();
 }
