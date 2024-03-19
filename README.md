@@ -13,9 +13,13 @@ Here is **Escape Room: Library Labryrinth** an educational learning quiz for stu
 ## About
 In **Escape Room: Library Labyrinth**, players must escape the library by answering a series of trivia questions.📚🔍
 
-There are three levels. Easy is the level that was designed for students to navigate, while medium and hard were used to develop my knowledge of API and to make the game more accesible to all who would like the enjoy. 
+There are three levels. Easy is the level that was designed for students to navigate. Players are also welcome to challenge themselves with medium and hard levels.
+
+Although medium and hard levels may exceed the capabilities of elementary school students, this project served as a learning experience for me. I aimed to develop a technology that utilizes various aspects of JavaScript, including APIs and multiple question types.
 
 I made this game through Get Coding as part of my module 1 project.It's been so much fun bringing it to life, and I hope you have as much fun playing it as I did making it.
+
+
 
  ## Navigation
 1. **Navigating The Menu:**
@@ -23,8 +27,12 @@ I made this game through Get Coding as part of my module 1 project.It's been so 
   
 2. **Choose The Difficulty:**
 - Choose your difficulty level. Easy, Medium or Hard.
+
+3. **Test Out Questions** 
+- In the easy level which was designed for students, there are multiple question types. There are the traditional multiple choice and boolean questions while scrambled word and clue answers provide an additional challenge.
+
   
-3. **Escape The Library:**
+4. **Escape The Library:**
 - Solve all the puzzles and beat the timer to escape the library.
 
 ## Technologies Used

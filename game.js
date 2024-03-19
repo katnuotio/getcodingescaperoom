@@ -235,7 +235,6 @@ function resetState() {
 function showQuestion() {
   resetState();
   let currentQuestion = questions[currentQuestionIndex];
-  console.log(currentQuestion);
   let questionNo = currentQuestionIndex + 1;
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
