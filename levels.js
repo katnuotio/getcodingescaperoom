@@ -20,16 +20,12 @@ function show(id) {
     hardButton.href = `game.html?level=hard&categoryId=${id}`
 }
 
-function updateButtons () {
-    console.log ("updatebutton")
-    
-}
+
 
 async function setCategories() {
 const response = await fetch ("https://opentdb.com/api_category.php")
 const data =await response.json(); 
 categories=data.trivia_categories;
-console.log("categories")
 populateSelect()
 show(categories[0].id)
 }
