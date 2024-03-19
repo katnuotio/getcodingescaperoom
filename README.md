@@ -9,6 +9,7 @@ Here is **Escape Room: Library Labryrinth** an educational learning quiz for stu
 - [Navigation](#navigation)
 - [Technologies Used](#technologies-used)
 - [Adding The Game](#adding-the-game)
+- [Credits](#credits)
 
 ## About
 In **Escape Room: Library Labyrinth**, players must escape the library by answering a series of trivia questions.📚🔍
@@ -44,3 +45,6 @@ I made this game through Get Coding as part of my module 1 project.It's been so 
 
 ## Adding The Game 
 **Clone the Repository:** git clone https://github.com/your-username/escape-room-library-labyrinth.git
+
+## Credits
+A huge thank you to Get Coding and my coach Lucas for their guidance with my project. I could not have completed it without their patience and support! 
