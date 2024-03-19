@@ -18,21 +18,21 @@ There are three levels. Easy is the level that was designed for students to navi
 I made this game through Get Coding as part of my module 1 project.It's been so much fun bringing it to life, and I hope you have as much fun playing it as I did making it.
 
  ## Navigation
-1.**Navigating The Menu:**
+1. **Navigating The Menu:**
 - Navigate to the game's website through your web browser.
   
-2.**Choose The Difficulty:**
+2. **Choose The Difficulty:**
 - Choose your difficulty level. Easy, Medium or Hard.
   
-3.**Escape The Library:**
+3. **Escape The Library:**
 - Solve all the puzzles and beat the timer to escape the library.
 
 ## Technologies Used
--HTML
+- HTML
 
--CSS
+- CSS
 
--Javascript 
+- Javascript 
 
 ## Adding The Game 
 **Clone the Repository:** git clone https://github.com/your-username/escape-room-library-labyrinth.git

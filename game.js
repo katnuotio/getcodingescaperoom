@@ -98,12 +98,12 @@ const answerButton = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const messageContainer = document.getElementById("message-container");
 
-const NUM_QUES = 10;
+let numberOfQuestions = 10;
 let categoryId;
 
 async function fetchQuestions(difficulty) {
   const response = await fetch(
-    `https://opentdb.com/api.php?amount=${NUM_QUES}&category=${categoryId}&difficulty=${difficulty}`
+    `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${categoryId}&difficulty=${difficulty}`
   );
   const data = await response.json();
   const results = data.results;
@@ -137,6 +137,7 @@ let score = 0;
 let strikes = 0;
 let timerInterval;
 let display = document.querySelector("#TimerDisplay");
+let timeLimitInSeconds;
 
 async function startQuiz() {
   const searchParams = new URLSearchParams(window.location.search);
@@ -147,18 +148,16 @@ async function startQuiz() {
 
   if (selectedDifficulty === "easy") {
     fetchedQuestions = questions;
+    timeLimitInSeconds= 20 * 60;
   } else if (selectedDifficulty === "medium") {
-    timer = 10 * 60;
-    const numberOfQuestions = 15; 
+    timeLimitInSeconds = 10 * 60;
+    numberOfQuestions = 15;
     fetchedQuestions = await fetchQuestions("easy", numberOfQuestions);
   } else if (selectedDifficulty === "hard") {
-    time = 5 * 60;
-    const numberOfQuestions = 25;
-    fetchedQuestions = await fetchQuestions("medium",numberOfQuestions);
+    timeLimitInSeconds = 5 * 60;
+    numberOfQuestions = 25;
+    fetchedQuestions = await fetchQuestions("medium", numberOfQuestions);
   }
-
-  
-
 
   if (fetchedQuestions.length > 0) {
     questions = fetchedQuestions;
@@ -172,8 +171,8 @@ async function startQuiz() {
     const url = window.location.href;
     const difficulty = url.split("=")[1];
 
-    const timeLimitInSeconds = 1200;
-    startTimer(timeLimitInSeconds, document.getElementById("timer-display"));
+    
+    startTimer(timeLimitInSeconds,);
 
     nextButton.innerHTML = "Next";
     showQuestion();
@@ -392,7 +391,6 @@ function checkClueAnswer(userAnswer) {
   }
 }
 
-
 function nextQuestion() {
   currentQuestionIndex++;
   localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
@@ -441,9 +439,8 @@ function stopGame() {
 }
 
 window.onload = function () {
-  let time = 20 * 60
+  let time = 20 * 60;
   if (display) {
-  startTimer(time);
   }
 
   let submitButton = document.getElementById("submit-name");
