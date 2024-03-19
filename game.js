@@ -136,6 +136,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let strikes = 0;
 let timerInterval;
+let display = document.querySelector("#TimerDisplay");
 
 async function startQuiz() {
   const searchParams = new URLSearchParams(window.location.search);
@@ -147,10 +148,17 @@ async function startQuiz() {
   if (selectedDifficulty === "easy") {
     fetchedQuestions = questions;
   } else if (selectedDifficulty === "medium") {
-    fetchedQuestions = await fetchQuestions("easy");
+    timer = 10 * 60;
+    const numberOfQuestions = 15; 
+    fetchedQuestions = await fetchQuestions("easy", numberOfQuestions);
   } else if (selectedDifficulty === "hard") {
-    fetchedQuestions = await fetchQuestions("medium");
+    time = 5 * 60;
+    const numberOfQuestions = 25;
+    fetchedQuestions = await fetchQuestions("medium",numberOfQuestions);
   }
+
+  
+
 
   if (fetchedQuestions.length > 0) {
     questions = fetchedQuestions;
@@ -181,7 +189,7 @@ function loadQuiz() {
   showQuestion();
 }
 
-function startTimer(duration, display) {
+function startTimer(duration) {
   let timer = duration;
   let minutes;
   let seconds;
@@ -356,6 +364,35 @@ function selectAnswer(e) {
   nextButton.addEventListener("click", nextQuestion);
 }
 
+function checkScrambledAnswer(userAnswer) {
+  const currentQuestion = questions[currentQuestionIndex];
+  const messageContainer = document.getElementById("message-container");
+  if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+    nextButton.style.display = "block";
+    messageContainer.innerHTML = "";
+    nextButton.addEventListener("click", nextQuestion);
+  } else {
+    messageContainer.innerHTML =
+      "<p style='color: red;'>Incorrect! Try Again!</p>";
+    incrementStrike();
+  }
+}
+
+function checkClueAnswer(userAnswer) {
+  const currentQuestion = questions[currentQuestionIndex];
+  const messageContainer = document.getElementById("message-container");
+
+  if (userAnswer === currentQuestion.correctAnswer.toLowerCase()) {
+    nextButton.style.display = "block";
+    messageContainer.innerHTML = "";
+    nextButton.addEventListener("click", nextQuestion);
+  } else {
+    messageContainer.innerHTML = "<p style='color: red;'>Incorrect!</p>";
+    incrementStrike();
+  }
+}
+
+
 function nextQuestion() {
   currentQuestionIndex++;
   localStorage.setItem("currentQuestionIndex", currentQuestionIndex);
@@ -404,9 +441,10 @@ function stopGame() {
 }
 
 window.onload = function () {
-  let time = 20 * 60,
-    display = document.querySelector("#TimerDisplay");
-  startTimer(time, display);
+  let time = 20 * 60
+  if (display) {
+  startTimer(time);
+  }
 
   let submitButton = document.getElementById("submit-name");
   submitButton.addEventListener("click", submitName);

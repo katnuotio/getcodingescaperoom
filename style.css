@@ -371,8 +371,12 @@ h2 {
   width: 15%;
 }
 
+#category-text{
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
 .strikes {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #f2f2f2;
-  margin-top: 20%;
+  margin-top: 5%;
 }
