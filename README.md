@@ -48,3 +48,5 @@ I made this game through Get Coding as part of my module 1 project.It's been so 
 
 ## Credits
 A huge thank you to Get Coding and my coach Lucas for their guidance with my project. I could not have completed it without their patience and support! 
+
+API was retrieved from https://opentdb.com/api_config.php
