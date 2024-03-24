@@ -98,10 +98,9 @@ const answerButton = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const messageContainer = document.getElementById("message-container");
 
-let numberOfQuestions = 10;
 let categoryId;
 
-async function fetchQuestions(difficulty) {
+async function fetchQuestions(difficulty,numberOfQuestions = 10) {
   const response = await fetch(
     `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${categoryId}&difficulty=${difficulty}`
   );
@@ -151,11 +150,11 @@ async function startQuiz() {
     timeLimitInSeconds= 20 * 60;
   } else if (selectedDifficulty === "medium") {
     timeLimitInSeconds = 10 * 60;
-    numberOfQuestions = 15;
+     const numberOfQuestions = 15;
     fetchedQuestions = await fetchQuestions("easy", numberOfQuestions);
   } else if (selectedDifficulty === "hard") {
     timeLimitInSeconds = 5 * 60;
-    numberOfQuestions = 10;
+    const numberOfQuestions = 10;
     fetchedQuestions = await fetchQuestions("medium", numberOfQuestions);
   }
 
@@ -168,8 +167,7 @@ async function startQuiz() {
     currentQuestionIndex = 0;
     score = parseInt(localStorage.getItem("score")) || 0;
 
-    const url = window.location.href;
-    const difficulty = url.split("=")[1];
+
 
     
     startTimer(timeLimitInSeconds,);

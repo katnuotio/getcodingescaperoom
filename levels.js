@@ -2,8 +2,8 @@ let categories;
 let currentCatId;
 
 function populateSelect() {
-    var ele = document.getElementById('categories');
-    for (var i = 0; i < categories.length; i++) {
+    let ele = document.getElementById('categories');
+    for (let i = 0; i < categories.length; i++) {
         ele.innerHTML += '<option value="' + categories[i]['id'] + '">' + categories[i]['name'] + '</option>';
     }
 }
