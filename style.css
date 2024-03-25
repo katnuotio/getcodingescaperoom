@@ -183,7 +183,7 @@ a.button2:hover {
   transform: scale(1.1);
 }
 
-#wLinkedIn a {
+.wLinkedIn a {
   margin-top: 5%;
   display: inline-block;
   color: #000 !important;
@@ -305,7 +305,7 @@ body {
   margin: 10px 0;
 }
 
-#clues-container {
+.clues-container {
   display: inline-block;
   opacity: 8;
   transition: opacity 5s ease-in-out;
