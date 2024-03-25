@@ -183,7 +183,7 @@ a.button2:hover {
   transform: scale(1.1);
 }
 
-.wLinkedIn a {
+#wLinkedIn a {
   margin-top: 5%;
   display: inline-block;
   color: #000 !important;
@@ -201,11 +201,11 @@ a.button2:hover {
   border-radius: 3px;
 }
 
-.wLinkedIn a:hover {
+#wLinkedIn a:hover {
   opacity: 0.8;
 }
 
-.icon-bg {
+#icon-bg {
   display: inline-block;
   background: #007bb6;
   background: -webkit-linear-gradient(#81bedb, #007bb6);
