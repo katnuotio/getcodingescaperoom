@@ -149,11 +149,11 @@ async function startQuiz() {
     fetchedQuestions = questions;
     timeLimitInSeconds= 20 * 60;
   } else if (selectedDifficulty === "medium") {
-    timeLimitInSeconds = 10 * 60;
+    timeLimitInSeconds = 15 * 60;
      const numberOfQuestions = 15;
     fetchedQuestions = await fetchQuestions("easy", numberOfQuestions);
   } else if (selectedDifficulty === "hard") {
-    timeLimitInSeconds = 5 * 60;
+    timeLimitInSeconds = 10 * 60;
     const numberOfQuestions = 10;
     fetchedQuestions = await fetchQuestions("medium", numberOfQuestions);
   }
