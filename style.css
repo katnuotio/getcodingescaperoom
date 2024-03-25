@@ -305,7 +305,7 @@ body {
   margin: 10px 0;
 }
 
-.clues-container {
+#clues-container {
   display: inline-block;
   opacity: 8;
   transition: opacity 5s ease-in-out;
@@ -316,7 +316,7 @@ body {
   opacity: 1;
 }
 
-.clues-list {
+#clues-list {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #f2f2f2;
   font-size: large;
