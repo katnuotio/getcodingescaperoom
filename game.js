@@ -217,11 +217,7 @@ function incrementStrike() {
   }
 }
 
-function submitName() {
-  let name = document.getElementById("player-name-input").value;
-  let submittedNameElement = document.getElementById("submitted-name");
-  submittedNameElement.textContent = "Explorer: " + name;
-}
+
 
 function resetState() {
   nextButton.style.display = "none";
@@ -440,8 +436,13 @@ window.onload = function () {
   let time = 20 * 60;
   if (display) {
   }
+  
 
-  let submitButton = document.getElementById("submit-name");
-  submitButton.addEventListener("click", submitName);
+ let playerName = localStorage.getItem("playerName");
+ if (playerName) {
+   let submittedNameElement = document.getElementById("submitted-name");
+   submittedNameElement.textContent = "Explorer: " + playerName; 
+ }
 };
+
 startQuiz();

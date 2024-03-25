@@ -18,10 +18,15 @@
         <a href="game.html?level=hard" id="hardButton" class="button2">Hard</a>
       
 
-        <label for="categories" id="category-text">Choose A Category: </label> 
+        <label for="categories" id="category-text" class="category-text">Choose A Category: </label> 
         <select name="categories" id="categories"onchange="show(this.value)"> 
         </select>
-      
+<label for="player-name-input" class="name-text">Choose your name, Explorer:</label>
+    <input type="text" id="player-name-input" placeholder="Enter your name">
+    <button onclick="submitName()" class="submit-name-button">Submit</button>
+    <div id="submitted-name" class="name-text"></div>
+
+    <p id="welcome-message" class="welcome-message"></p>
 
         <script src="levels.js"></script>
     </div>

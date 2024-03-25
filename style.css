@@ -328,10 +328,7 @@ body {
     display: inline;
   }
 
-  .submitted-name {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    color: #f2f2f2;
-  }
+ 
 }
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
@@ -364,19 +361,69 @@ h2 {
   margin-right: 5%;
 }
 
-#submit-name.btn {
-  display: inline-block;
-  padding: 1% 0.5% 1% 0.5%;
-  font-size: 14px;
-  width: 15%;
+
+
+
+@media only screen and (max-width: 600px) {
+  .submit-name-button {
+    width: 80%; 
+  }
 }
 
-#category-text{
+.category-text{
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.strikes {
+.strike-number {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #f2f2f2;
   margin-top: 5%;
+}
+
+
+.name-text {
+     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+     margin-top: 5%;
+}
+
+.submitted-name{
+     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #f2f2f2;
+}
+
+.submit-name-button {
+  display: inline;
+  vertical-align: top; 
+  background: #ffffff;
+  color: #222;
+  font-weight: 500;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  width: auto;
+  border: 1px solid #222;
+  padding: .7% .5% .5% .7%;
+  margin: .1% 0 0 .1%; 
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #5f6164;
+}
+
+.player-name-input {
+  vertical-align: top; 
+  margin-right: 10px; 
+}
+
+.welcome-message {
+    display: none; 
+}
+
+.category-text{
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #f2f2f2;
+}
+
+
+.welcome-message.visible {
+    display: block; 
 }
